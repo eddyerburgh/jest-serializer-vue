@@ -9,7 +9,10 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue .",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest"
+    "release": "build/release.sh",
+    "release:note": "node build/gen-release-note.js",
+    "test": "npm run lint && npm run unit",
+    "unit": "jest"
   },
   "repository": {
     "type": "git",
@@ -26,6 +29,7 @@
   "homepage": "https://github.com/eddyerburgh/jest-serializer-vue#readme",
   "devDependencies": {
     "babel-jest": "^21.0.0",
+    "conventional-changelog": "^1.1.5",
     "eslint": "^4.6.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.7.0",
