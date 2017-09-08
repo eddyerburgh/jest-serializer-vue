@@ -1,11 +1,11 @@
-const beautify = require('js-beautify').html;
+const beautify = require('js-beautify').html
 
 module.exports = {
-  test(object) {
-    return typeof object === 'string' && object[0] === '<';
+  test (object) {
+    return typeof object === 'string' && object[0] === '<'
   },
-  print(val) {
+  print (val) {
     const removedServerRenderedText = val.replace(/ data-server-rendered="true"/, '')
-    return beautify(removedServerRenderedText, {});
-  },
-};
+    return beautify(removedServerRenderedText, {})
+  }
+}

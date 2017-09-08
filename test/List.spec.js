@@ -11,6 +11,7 @@ describe('List.vue', () => {
       }
     })
     renderer.renderToString(wrapper.vm, (err, str) => {
+      if (err) throw new Error(err)
       expect(str).toMatchSnapshot()
     })
   })

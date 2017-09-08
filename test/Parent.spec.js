@@ -7,6 +7,7 @@ describe('Parent.vue', () => {
     const renderer = createRenderer()
     const wrapper = mount(Parent)
     renderer.renderToString(wrapper.vm, (err, str) => {
+      if (err) throw new Error(err)
       expect(str).toMatchSnapshot()
     })
   })
@@ -15,6 +16,7 @@ describe('Parent.vue', () => {
     const renderer = createRenderer()
     const wrapper = shallow(Parent)
     renderer.renderToString(wrapper.vm, (err, str) => {
+      if (err) throw new Error(err)
       expect(str).toMatchSnapshot()
     })
   })

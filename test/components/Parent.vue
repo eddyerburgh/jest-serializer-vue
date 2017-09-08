@@ -12,10 +12,10 @@
 <script>
 import Child from './Child.vue'
 
-  export default {
-    name: 'parent',
-    components: {
-      Child
-    }
+export default {
+  name: 'parent',
+  components: {
+    Child
   }
+}
 </script>
