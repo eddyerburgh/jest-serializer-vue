@@ -1,0 +1,47 @@
+{
+  "name": "jest-serializer-vue",
+  "description": "A jest serializer for Vue snapshots",
+  "version": "0.1.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddyerburgh/jest-serializer-vue.git"
+  },
+  "keywords": [
+    "jest"
+  ],
+  "author": "Edd Yerburgh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eddyerburgh/jest-serializer-vue/issues"
+  },
+  "homepage": "https://github.com/eddyerburgh/jest-serializer-vue#readme",
+  "devDependencies": {
+    "babel-jest": "^21.0.0",
+    "jest": "^21.0.1",
+    "jest-vue": "^0.5.2",
+    "vue": "^2.4.2",
+    "vue-server-renderer": "^2.4.2",
+    "vue-test-utils": "https://github.com/vuejs/vue-test-utils"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.vue$": "<rootDir>/node_modules/jest-vue"
+    },
+    "snapshotSerializers": [
+      "<rootDir>/index.js"
+    ]
+  }
+}
