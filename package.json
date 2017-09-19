@@ -56,5 +56,8 @@
     "snapshotSerializers": [
       "<rootDir>/index.js"
     ]
+  },
+  "dependencies": {
+    "js-beautify": "^1.7.3"
   }
 }
