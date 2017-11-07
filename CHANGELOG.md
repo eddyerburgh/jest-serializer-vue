@@ -1,3 +1,12 @@
+<a name="0.3.0"></a>
+# v0.3.0 (2017-11-07)
+
+
+### Bug Fixes
+
+* add missing js-beautify dependency 8ae7304
+* indentation issues (#1) b193932
+
 <a name="v0.2.0"></a>
 # v0.2.0 (2017-09-19)
 
