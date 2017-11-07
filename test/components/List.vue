@@ -1,6 +1,8 @@
 <template>
     <ul>
-        <li v-for="(item, key) in items" :key={key}>
+        <li
+            v-for="(item, key) in items"
+            :key="key">
             {{ item }}
         </li>
     </ul>
