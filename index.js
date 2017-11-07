@@ -1,4 +1,4 @@
-const beautify = require('js-beautify').html
+const beautify = require('pretty')
 
 module.exports = {
   test (object) {
@@ -6,6 +6,6 @@ module.exports = {
   },
   print (val) {
     const removedServerRenderedText = val.replace(/ data-server-rendered="true"/, '')
-    return beautify(removedServerRenderedText, {})
+    return beautify(removedServerRenderedText, { indent_size: 4 })
   }
 }
