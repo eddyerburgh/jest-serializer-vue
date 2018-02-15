@@ -27,11 +27,8 @@ import { createRenderer } from 'vue-server-renderer'
 
 describe('Basic.vue', () => {
   it('hasn\'t changed snapshot', () => {
-    const renderer = createRenderer()
     const wrapper = shallow(Basic)
-    renderer.renderToString(wrapper.vm, (err, str) => {
-      expect(str).toMatchSnapshot()
-    })
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })
 ```
