@@ -26,7 +26,7 @@ import Basic from './Basic.vue'
 import { createRenderer } from 'vue-server-renderer'
 
 describe('Basic.vue', () => {
-  it('hasn\'t changed snapshot', () => {
+  it('renders correctly', () => {
     const wrapper = shallow(Basic)
     expect(wrapper.html()).toMatchSnapshot()
   })
