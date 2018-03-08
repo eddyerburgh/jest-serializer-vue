@@ -6,6 +6,6 @@ module.exports = {
   },
   print (val) {
     const removedServerRenderedText = val.replace(/ data-server-rendered="true"/, '')
-    return beautify(removedServerRenderedText, { indent_size: 4 })
+    return beautify(removedServerRenderedText, { indent_size: 2 })
   }
 }
