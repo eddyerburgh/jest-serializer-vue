@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/eddyerburgh/jest-serializer-vue#readme",
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.12",
     "babel-jest": "21.2.0",
     "babel-preset-es2015": "6.24.1",
     "conventional-changelog": "1.1.6",
@@ -41,9 +42,7 @@
     "jest": "21.2.1",
     "vue": "2.5.3",
     "vue-jest": "1.0.2",
-    "vue-server-renderer": "2.5.3",
-    "vue-template-compiler": "2.5.3",
-    "vue-test-utils": "1.0.0-beta.4"
+    "vue-template-compiler": "2.5.3"
   },
   "jest": {
     "moduleFileExtensions": [

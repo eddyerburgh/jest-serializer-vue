@@ -2,22 +2,44 @@
 
 exports[`Parent.vue mount snapshot 1`] = `
 <div>
-    <h1>parent</h1>
-    <main>
-        <p>this is a child component</p>
-        <p>this is a child component</p>
-        <p>this is a child component</p>
-    </main>
+  <h1>parent</h1>
+  <main>
+    <p>this is a child component</p>
+    <p>this is a child component</p>
+    <p>this is a child component</p>
+  </main>
+</div>
+`;
+
+exports[`Parent.vue mount snapshot 2`] = `
+<div>
+  <h1>
+    parent
+  </h1>
+   
+  <main>
+    <p>
+      this is a child component
+    </p>
+     
+    <p>
+      this is a child component
+    </p>
+     
+    <p>
+      this is a child component
+    </p>
+  </main>
 </div>
 `;
 
 exports[`Parent.vue shallow snapshot 1`] = `
 <div>
-    <h1>parent</h1>
-    <main>
-        <!---->
-        <!---->
-        <!---->
-    </main>
+  <h1>parent</h1>
+  <main>
+    <!---->
+    <!---->
+    <!---->
+  </main>
 </div>
 `;

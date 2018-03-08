@@ -2,17 +2,17 @@
 
 exports[`ListSpaced.vue hasn't changed snapshot 1`] = `
 <aside role="banner" class="test">
-    <a title="one" class="one">
-        one
-    </a>
-    <a title="two" class="two">
-        two
-    </a>
-    <a title="three" class="three">
-        three
-    </a>
-    <a title="four" class="four">
-        four
-    </a>
+  <a title="one" class="one">
+    one
+  </a>
+  <a title="two" class="two">
+    two
+  </a>
+  <a title="three" class="three">
+    three
+  </a>
+  <a title="four" class="four">
+    four
+  </a>
 </aside>
 `;
