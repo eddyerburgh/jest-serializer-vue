@@ -4,7 +4,7 @@
 
 ### Features
 
-* Change indentation to two spaces ([b193932])(https://github.com/eddyerburgh/jest-serializer-vue/commit/b193932)
+* Change indentation to two spaces ([b193932](https://github.com/eddyerburgh/jest-serializer-vue/commit/b193932))
 
 <a name="0.3.0"></a>
 # v0.3.0 (2017-11-07)
