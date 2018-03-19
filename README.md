@@ -5,7 +5,7 @@ Jest Vue snapshot serializer
 ## Installation
 
 ```
-npm istall --save-dev jest-serializer-vue
+npm install --save-dev jest-serializer-vue
 ```
 
 ## Usage
