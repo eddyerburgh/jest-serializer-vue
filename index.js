@@ -1,11 +1,18 @@
 const beautify = require('pretty')
 
+const isHtmlString = received => typeof received === 'string' && received[0] === '<'
+const isVueWrapper = received => (
+  typeof received === 'object' &&
+  typeof received.isVueInstance === 'function'
+)
+
 module.exports = {
-  test (object) {
-    return typeof object === 'string' && object[0] === '<'
+  test (received) {
+    return isHtmlString(received) || isVueWrapper(received)
   },
-  print (val) {
-    const removedServerRenderedText = val.replace(/ data-server-rendered="true"/, '')
+  print (received) {
+    const html = isVueWrapper(received) ? received.html() : received
+    const removedServerRenderedText = html.replace(/ data-server-rendered="true"/, '')
     return beautify(removedServerRenderedText, { indent_size: 2 })
   }
 }

@@ -12,4 +12,14 @@ describe('Parent.vue', () => {
     const wrapper = shallow(Parent)
     expect(wrapper.html()).toMatchSnapshot()
   })
+
+  it('properly serializes a shallowly-rendered wrapper', () => {
+    const wrapper = shallow(Parent)
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it('properly serializes a fully-mounted wrapper', () => {
+    const wrapper = mount(Parent)
+    expect(wrapper).toMatchSnapshot()
+  })
 })
