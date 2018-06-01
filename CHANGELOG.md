@@ -1,3 +1,11 @@
+<a name="v2.0.0"></a>
+# [v2.0.0](/compare/v1.0.0...v2.0.0) (2018-05-29)
+
+
+### Features
+
+* serialize Wrapper Instances (#4) 3e8dec0
+
 <a name="1.0.0"></a>
 # v1.0.0 (2018-03-09)
 
