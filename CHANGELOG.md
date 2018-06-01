@@ -4,7 +4,7 @@
 
 ### Features
 
-* serialize Wrapper Instances (#4) 3e8dec0
+serialize Wrapper Instances (#4) 3e8dec0. Create a snapshot with a Vue Test Utils wrapper instance.
 
 <a name="1.0.0"></a>
 # v1.0.0 (2018-03-09)
