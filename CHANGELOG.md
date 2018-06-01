@@ -4,7 +4,7 @@
 
 ### Features
 
-serialize Wrapper Instances (#4) 3e8dec0. Create a snapshot with a Vue Test Utils wrapper instance.
+* serialize Wrapper Instances (#4) 3e8dec0. Create a snapshot with a Vue Test Utils Wrapper instance. This means you no longer need to call `.html()` on your Wrapper instance before calling `toMatchSnapshot()`.
 
 <a name="1.0.0"></a>
 # v1.0.0 (2018-03-09)
