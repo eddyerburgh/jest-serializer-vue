@@ -1,7 +1,8 @@
 const beautify = require('pretty')
 
-const isHtmlString = received => typeof received === 'string' && received[0] === '<'
+const isHtmlString = received => received && typeof received === 'string' && received[0] === '<'
 const isVueWrapper = received => (
+  recieved &&
   typeof received === 'object' &&
   typeof received.isVueInstance === 'function'
 )
