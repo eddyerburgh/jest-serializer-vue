@@ -1,3 +1,11 @@
+<a name="v2.0.1"></a>
+## [v2.0.1](https://github.com/eddyerburgh/jest-serializer-vue/compare/v2.0.0...v2.0.1) (2018-06-04)
+
+
+### Bug Fixes
+
+* Ensure that recieved is not null | undefined ([#6](https://github.com/eddyerburgh/jest-serializer-vue/issues/6)) ([69b2553](https://github.com/eddyerburgh/jest-serializer-vue/commit/69b2553))
+
 <a name="v2.0.0"></a>
 # [v2.0.0](/compare/v1.0.0...v2.0.0) (2018-05-29)
 
