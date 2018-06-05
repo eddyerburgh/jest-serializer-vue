@@ -12,7 +12,7 @@ module.exports = {
     return isHtmlString(received) || isVueWrapper(received)
   },
   print (received) {
-    const html = isVueWrapper(received) ? received.html() : received
+    const html = (isVueWrapper(received) ? received.html() : received) || ''
     const removedServerRenderedText = html.replace(/ data-server-rendered="true"/, '')
     return beautify(removedServerRenderedText, { indent_size: 2 })
   }

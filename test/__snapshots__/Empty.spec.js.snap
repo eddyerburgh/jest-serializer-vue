@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Empty.vue mount snapshot 1`] = `undefined`;
+exports[`Empty.vue properly serializes a fully-mounted wrapper 1`] = ``;
 
-exports[`Empty.vue mount snapshot 2`] = `<!---->`;
-
-exports[`Empty.vue shallow snapshot 1`] = `undefined`;
+exports[`Empty.vue properly serializes a shallowly-rendered wrapper 1`] = ``;
