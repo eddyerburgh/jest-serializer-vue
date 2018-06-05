@@ -9,8 +9,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue .",
     "lint:fix": "npm run lint -- --fix",
-    "release": "build/release.sh",
-    "release:note": "node build/gen-release-note.js",
+    "publish": "semantic-release",
     "test": "npm run lint && npm run unit",
     "unit": "jest"
   },
@@ -41,6 +40,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "beta",
     "jest": "^22.4.2",
+    "semantic-release": "^15.5.0",
     "vue": "2.5.3",
     "vue-jest": "1.0.2",
     "vue-template-compiler": "2.5.3"
