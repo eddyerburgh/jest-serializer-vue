@@ -21,14 +21,13 @@ You need to tell Jest to use the serializer. Add this to your Jest config:
 And your snapshot tests will be pretty printed 💅
 
 ```js
-import { shallow } from 'avoriaz'
+import { shallow } from '@vue/test-utils'
 import Basic from './Basic.vue'
-import { createRenderer } from 'vue-server-renderer'
 
 describe('Basic.vue', () => {
   it('renders correctly', () => {
     const wrapper = shallow(Basic)
-    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 })
 ```
