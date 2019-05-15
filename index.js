@@ -7,7 +7,7 @@ const isVueWrapper = received => (
   typeof received.isVueInstance === 'function'
 )
 const removedServerRenderedText = html => html.replace(/ data-server-rendered="true"/, '')
-// [-\w]+ will catch 1 or more instaces of a-z, A-Z, 0-9, hyphen (-), or underscore (_)
+// [-\w]+ will catch 1 or more instances of a-z, A-Z, 0-9, hyphen (-), or underscore (_)
 const removeDataTestAttributes = html => html.replace(/ data-test="[-\w]+"/, '')
 
 module.exports = {
