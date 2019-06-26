@@ -8,7 +8,7 @@ const isVueWrapper = received => (
 )
 const removedServerRenderedText = html => html.replace(/ data-server-rendered="true"/, '')
 // [-\w]+ will catch 1 or more instances of a-z, A-Z, 0-9, hyphen (-), or underscore (_)
-const removeDataTestAttributes = html => html.replace(/ data-test="[-\w]+"/, '')
+const removeDataTestAttributes = html => html.replace(/ data-test="[-\w]+"/g, '')
 
 module.exports = {
   test (received) {
