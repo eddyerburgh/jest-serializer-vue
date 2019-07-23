@@ -6,7 +6,7 @@ const isVueWrapper = received => (
   typeof received === 'object' &&
   typeof received.isVueInstance === 'function'
 )
-const removedServerRenderedText = html => html.replace(/ data-server-rendered="true"/, '')
+const removeServerRenderedText = html => html.replace(/ data-server-rendered="true"/, '')
 // [-\w]+ will catch 1 or more instances of a-z, A-Z, 0-9, hyphen (-), or underscore (_)
 const removeDataTestAttributes = html => html.replace(/ data-test="[-\w]+"/g, '')
 
@@ -16,7 +16,7 @@ module.exports = {
   },
   print (received) {
     let html = (isVueWrapper(received) ? received.html() : received) || ''
-    html = removedServerRenderedText(html)
+    html = removeServerRenderedText(html)
     html = removeDataTestAttributes(html)
     return beautify(html, { indent_size: 2 })
   }
