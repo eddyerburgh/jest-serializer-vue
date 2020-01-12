@@ -21,6 +21,7 @@
     "eslint-config-tjw-base": "^1.0.0",
     "eslint-config-tjw-jest": "^1.0.0",
     "eslint-config-tjw-vue": "^1.0.0",
+    "eslint-plugin-jsdoc": "^20.3.0",
     "eslint-plugin-vue": "^6.1.2",
     "jest": "^24.9.0",
     "vue": "^2.6.11",

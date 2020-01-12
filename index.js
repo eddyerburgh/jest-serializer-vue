@@ -66,7 +66,7 @@ function loadOptions () {
  * Determines if the passed in value is markup.
  *
  * @param  {string}  received  The markup to be serialized
- * @return {Boolean}           true = value is HTML
+ * @return {boolean}           true = value is HTML
  */
 function isHtmlString (received) {
   return (
@@ -80,7 +80,7 @@ function isHtmlString (received) {
  * Determines if the passed in value is a Vue wrapper.
  *
  * @param  {object}  received  The Vue wrapper containing the markup to be serialized
- * @return {Boolean}           true = value is a Vue wrapper
+ * @return {boolean}           true = value is a Vue wrapper
  */
 function isVueWrapper (received) {
   return (
@@ -123,9 +123,23 @@ function removeDataTestAttributes (html, options) {
 }
 
 module.exports = {
+  /**
+   * Test function for Jest's serializer API.
+   * Determines whether to pass the markup through the print function.
+   *
+   * @param  {string|object} received  The markup or Vue wrapper to be formatted
+   * @return {boolean}                 true = Tells Jest to run the print function
+   */
   test: function (received) {
     return isHtmlString(received) || isVueWrapper(received);
   },
+  /**
+   * Print function for Jest's serializer API.
+   * Formats markup according to options.
+   *
+   * @param  {string|object} received  The markup of Vue wrapper to be formatted
+   * @return {string}                  The formatted markup
+   */
   print: function (received) {
     const options = loadOptions();
     let html = received || '';
