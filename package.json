@@ -1,49 +1,48 @@
 {
-  "name": "jest-serializer-vue",
-  "description": "A jest serializer for Vue snapshots",
-  "version": "2.0.2",
+  "name": "jest-serializer-vue-tjw",
+  "description": "A superb jest serializer for Vue snapshots",
+  "version": "3.0.0",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
     "lint": "eslint --ext .js,.vue .",
-    "lint:fix": "npm run lint -- --fix",
-    "publish": "semantic-release",
-    "test": "npm run lint && npm run unit",
-    "unit": "jest"
+    "fix": "npm run lint -- --fix",
+    "test": "jest",
+    "validate": "npm run lint && npm test"
+  },
+  "dependencies": {
+    "pretty": "^2.0.0"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.9.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^6.8.0",
+    "eslint-config-tjw-base": "^1.0.0",
+    "eslint-config-tjw-jest": "^1.0.0",
+    "eslint-config-tjw-vue": "^1.0.0",
+    "jest": "^24.9.0",
+    "vue": "^2.6.11",
+    "vue-jest": "^3.0.5",
+    "vue-template-compiler": "^2.6.11"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eddyerburgh/jest-serializer-vue.git"
+    "url": "git+https://github.com/tjw-lint/jest-serializer-vue-tjw.git"
   },
   "keywords": [
-    "jest"
+    "jest",
+    "serializer",
+    "vue"
   ],
-  "author": "Edd Yerburgh",
+  "author": "The Jared Wilcurt",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/eddyerburgh/jest-serializer-vue/issues"
+    "url": "https://github.com/tjw-lint/jest-serializer-vue-tjw/issues"
   },
-  "homepage": "https://github.com/eddyerburgh/jest-serializer-vue#readme",
-  "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.12",
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.4.1",
-    "babel-preset-env": "^1.6.1",
-    "conventional-changelog": "1.1.6",
-    "eslint": "4.10.0",
-    "eslint-config-standard": "10.2.1",
-    "eslint-plugin-import": "2.8.0",
-    "eslint-plugin-node": "5.2.1",
-    "eslint-plugin-promise": "3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "eslint-plugin-vue": "beta",
-    "jest": "^22.4.2",
-    "semantic-release": "^15.5.0",
-    "vue": "2.5.3",
-    "vue-jest": "1.0.2",
-    "vue-template-compiler": "2.5.3"
+  "homepage": "https://github.com/tjw-lint/jest-serializer-vue-tjw#readme",
+  "directories": {
+    "test": "test"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -58,8 +57,5 @@
     "snapshotSerializers": [
       "<rootDir>/index.js"
     ]
-  },
-  "dependencies": {
-    "pretty": "2.0.0"
   }
 }
