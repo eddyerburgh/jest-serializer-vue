@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Parent.vue mount snapshot 1`] = `
+exports[`Parent.vue Mount snapshot 1`] = `
 <div>
   <h1>parent</h1>
   <main>
@@ -11,7 +11,7 @@ exports[`Parent.vue mount snapshot 1`] = `
 </div>
 `;
 
-exports[`Parent.vue mount snapshot 2`] = `
+exports[`Parent.vue Mount snapshot 2`] = `
 <div>
   <h1>
     parent
@@ -33,7 +33,7 @@ exports[`Parent.vue mount snapshot 2`] = `
 </div>
 `;
 
-exports[`Parent.vue properly serializes a fully-mounted wrapper 1`] = `
+exports[`Parent.vue Properly serializes a fully-mounted wrapper 1`] = `
 <div>
   <h1>parent</h1>
   <main>
@@ -44,24 +44,24 @@ exports[`Parent.vue properly serializes a fully-mounted wrapper 1`] = `
 </div>
 `;
 
-exports[`Parent.vue properly serializes a shallowly-rendered wrapper 1`] = `
+exports[`Parent.vue Properly serializes a shallowly-rendered wrapper 1`] = `
 <div>
   <h1>parent</h1>
   <main>
-    <!---->
-    <!---->
-    <!---->
+    <child-stub></child-stub>
+    <child-stub></child-stub>
+    <child-stub></child-stub>
   </main>
 </div>
 `;
 
-exports[`Parent.vue shallow snapshot 1`] = `
+exports[`Parent.vue Shallow snapshot 1`] = `
 <div>
   <h1>parent</h1>
   <main>
-    <!---->
-    <!---->
-    <!---->
+    <child-stub></child-stub>
+    <child-stub></child-stub>
+    <child-stub></child-stub>
   </main>
 </div>
 `;

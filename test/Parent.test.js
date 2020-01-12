@@ -1,8 +1,8 @@
-import { mount, shallow } from '@vue/test-utils';
+import { mount, shallowMount } from '@vue/test-utils';
 import Parent from './components/Parent.vue';
 
 describe('Parent.vue', () => {
-  test('mount snapshot', () => {
+  test('Mount snapshot', () => {
     const wrapper = mount(Parent);
 
     expect(wrapper.html())
@@ -12,21 +12,21 @@ describe('Parent.vue', () => {
       .toMatchSnapshot();
   });
 
-  test('shallow snapshot', () => {
-    const wrapper = shallow(Parent);
+  test('Shallow snapshot', () => {
+    const wrapper = shallowMount(Parent);
 
     expect(wrapper.html())
       .toMatchSnapshot();
   });
 
-  test('properly serializes a shallowly-rendered wrapper', () => {
-    const wrapper = shallow(Parent);
+  test('Properly serializes a shallowly-rendered wrapper', () => {
+    const wrapper = shallowMount(Parent);
 
     expect(wrapper)
       .toMatchSnapshot();
   });
 
-  test('properly serializes a fully-mounted wrapper', () => {
+  test('Properly serializes a fully-mounted wrapper', () => {
     const wrapper = mount(Parent);
 
     expect(wrapper)

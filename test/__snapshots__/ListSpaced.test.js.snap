@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ListSpaced.vue hasn't changed snapshot 1`] = `
+exports[`ListSpaced.vue Snapshot unchanged 1`] = `
 <aside role="banner" class="test">
   <a title="one" class="one">
     one

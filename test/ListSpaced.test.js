@@ -1,9 +1,9 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import ListSpaced from './components/ListSpaced.vue';
 
 describe('ListSpaced.vue', () => {
-  test('hasn\'t changed snapshot', () => {
-    const wrapper = shallow(ListSpaced);
+  test('Snapshot unchanged', () => {
+    const wrapper = shallowMount(ListSpaced);
 
     expect(wrapper.html())
       .toMatchSnapshot();

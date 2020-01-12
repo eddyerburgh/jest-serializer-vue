@@ -1,9 +1,9 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import List from './components/List.vue';
 
 describe('List.vue', () => {
-  test('hasn\'t changed snapshot', () => {
-    const wrapper = shallow(List, {
+  test('Snapshot unchanged', () => {
+    const wrapper = shallowMount(List, {
       propsData: {
         items: ['one', 'two', 'three']
       }
