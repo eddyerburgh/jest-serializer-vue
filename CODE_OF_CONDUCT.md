@@ -1,76 +1,55 @@
-# Contributor Covenant Code of Conduct
+# "No Ideologies" Code of Conduct
 
-## Our Pledge
+The following are the guidelines we expect our community members and maintainers to follow.
 
-In the interest of fostering an open and welcoming environment, we as
-contributors and maintainers pledge to making participation in our project and
-our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, sex characteristics, gender identity and expression,
-level of experience, education, socio-economic status, nationality, personal
-appearance, race, religion, or sexual identity and orientation.
+* * *
 
-## Our Standards
+## Terminology and Scope
 
-Examples of behavior that contributes to creating a positive environment
-include:
+**What defines a "maintainer"?**
 
-* Using welcoming and inclusive language
-* Being respectful of differing viewpoints and experiences
-* Gracefully accepting constructive criticism
-* Focusing on what is best for the community
-* Showing empathy towards other community members
+* A maintainer is anyone that interacts with the community on behalf of this project. Amount of code written is not a qualifier. A maintainer may include those who solely help in support roles such as in resolving issues, improving documentation, administrating or moderating forums/chatrooms, or any other non-coding specific roles. Maintainers also include those that are responsible for the building and upkeep of the project.
 
-Examples of unacceptable behavior by participants include:
+**What defines a "community member"?**
 
-* The use of sexualized language or imagery and unwelcome sexual attention or
-  advances
-* Trolling, insulting/derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or electronic
-  address, without explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+* Anyone interacting with this project directly, including maintainers.
 
-## Our Responsibilities
+**What is the scope of these guidelines?**
 
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
+* These guidelines apply only to this project and forms of communication directly related to it, such as issue trackers, forums, chatrooms, and in person events specific to this project. If a member is violating these guidelines outside of this project or on other platforms, that is beyond our scope and any grievances should be handled on those platforms.
 
-Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to this Code of Conduct, or to ban temporarily or
-permanently any contributor for other behaviors that they deem inappropriate,
-threatening, offensive, or harmful.
+**Discussing the guidelines:**
 
-## Scope
+* Discussions around these guidelines, improving, updating, or altering them, is permitted so long as the discussions do not violate any existing guidelines.
 
-This Code of Conduct applies both within project spaces and in public spaces
-when an individual is representing the project or its community. Examples of
-representing a project or community include using an official project e-mail
-address, posting via an official social media account, or acting as an appointed
-representative at an online or offline event. Representation of a project may be
-further defined and clarified by project maintainers.
+* * *
 
-## Enforcement
+## Guidelines
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at edward.yerburgh@gmail.com. All
-complaints will be reviewed and investigated and will result in a response that
-is deemed necessary and appropriate to the circumstances. The project team is
-obligated to maintain confidentiality with regard to the reporter of an incident.
-Further details of specific enforcement policies may be posted separately.
+### Guidelines for community members
 
-Project maintainers who do not follow or enforce the Code of Conduct in good
-faith may face temporary or permanent repercussions as determined by other
-members of the project's leadership.
+This project is technical in nature and not based around any particular non-technical ideology. As such, communication that is based primarily around ideologies unrelated to the technologies used by this repository are not permitted.
 
-## Attribution
+Any discussion or communication that is primarily focused around an ideology, be it about race, gender, politics, religion, or anything else non-technical, is not allowed. Everyone has their own ideological preferences, beliefs, and opinions. We do not seek to marginalize, exclude, or judge anyone for their ideologies. To prevent conflict between those with differing or opposing ideologies, all communication on these subjects are prohibited. Some discussions around these topics may be important, however this project is not the proper channel for these discussions.
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
-available at https://www.contributor-covenant.org/version/1/4/code-of-conduct.html
+### Guidelines for maintainers
 
-[homepage]: https://www.contributor-covenant.org
+* Maintainers must abide by the same rules as all other community members mentioned above. However, in addition, maintainers are held to a higher standard, explained below.
+* Maintainers should answer all questions politely.
+* If someone is upset or angry about something, it's probably because it's difficult to use, so thank them for bringing it to your attention and address ways to solve the problem. Maintainers should focus on the content of the message, and not on how it was delivered.
+* A maintainer should seek to update members when an issue they brought up is resolved.
 
-For answers to common questions about this code of conduct, see
-https://www.contributor-covenant.org/faq
+* * *
+
+## Appropriate response to violations
+
+How to respond to a community member or maintainer violating a guideline.
+
+1. If an issue is created that violates a guideline a maintainer should close and lock the issue, explaining "This issue is in violation of our code of conduct. Please review it before posting again." with a link to this document.
+1. If a member repeatedly violates the guidelines established in this document, they should be politely warned that continuing to violate the rules may result in being banned from the community. This means revoking access and support to interactions relating directly to the project (issue trackers, chatrooms, forums, in person events, etc.). However, they may continue to use the technology in accordance with its license.
+1. If a maintainer is in violation of a guideline, they should be informed of such with a link to this document. If additional actions are required of the maintainer but not taken, then other maintainers should be informed of these inactions.
+1. If a maintainer repeatedly violates the guidelines established in this document, they should be politely warned that continuing to violate the rules may result in being banned from the community. This means revoking access and support to interactions relating directly to the project (issue trackers, chatrooms, forums, in person events, etc.). However, they may continue to use the technology in accordance with its license. In addition, future contributions to this project may be ignored as well.
+
+* * *
+
+Based on version 1.0.3 from https://github.com/CodifiedConduct/coc-no-ideologies
