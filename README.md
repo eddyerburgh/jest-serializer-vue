@@ -59,6 +59,7 @@ module.exports = {
     jestSerializer: {
       removeDataTest: true,
       removeServerRendered: true,
+      // All available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
       pretty: {
         indent_char: ' ',
         indent_inner_html: true,
@@ -76,4 +77,4 @@ Setting              | Default           | Description
 :--                  | :--               | :--
 removeDataTest       | `true`            | Removes `data-test="whatever"` from your snapshots if true.
 removeServerRendered | `true`            | Removes `data-server-rendered="true"` from your snapshots if true.
-pretty               | See above example | These options are passed into `pretty` to format the snapshot. To use `pretty`'s defaults pass in `true`. [See all available options here](https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js)
+pretty               | See above example | These options are passed into `pretty` to format the snapshot. To use `pretty`'s defaults pass in `true`. [See all available options here](https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js).
