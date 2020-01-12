@@ -14,6 +14,13 @@ Jest Vue snapshot serializer
 1. Edd is busy and not maintaining his Vue repos right now. Cool dude though.
 
 
+## What do you mean by "much better snapshot defaults"?
+
+This is the before and after of using the default "pretty" options, and my options (which you can change with the API below, something Edd's version does not offer).
+
+![Difference between the snapshot settings, my version makes the formatting cleaner and easier to see what actually changed in a failing snapshot](https://user-images.githubusercontent.com/4629794/53278405-f8685880-36d6-11e9-92f0-127e0673a23a.gif)
+
+
 ## Installation
 
 ```
