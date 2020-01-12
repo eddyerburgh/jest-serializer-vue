@@ -66,7 +66,7 @@ function loadOptions () {
  * Determines if the passed in value is markup.
  *
  * @param  {string}  received  The markup to be serialized
- * @return {Boolean}           true = value is HTML
+ * @return {boolean}           true = value is HTML
  */
 function isHtmlString (received) {
   return (
@@ -80,7 +80,7 @@ function isHtmlString (received) {
  * Determines if the passed in value is a Vue wrapper.
  *
  * @param  {object}  received  The Vue wrapper containing the markup to be serialized
- * @return {Boolean}           true = value is a Vue wrapper
+ * @return {boolean}           true = value is a Vue wrapper
  */
 function isVueWrapper (received) {
   return (
