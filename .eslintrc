@@ -3,7 +3,8 @@
       "jest": true
     },
     "extends": [
-      "standard",
-      "plugin:vue/recommended"
+      "tjw-base",
+      "tjw-jest",
+      "tjw-vue"
     ]
 }

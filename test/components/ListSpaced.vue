@@ -1,23 +1,15 @@
 <template>
   <aside class="test" role="banner">
-    <a
-      title="one"
-      class="one">
+    <a title="one" class="one">
       one
     </a>
-    <a
-      title="two"
-      class="two">
+    <a title="two" class="two">
       two
     </a>
-    <a
-      title="three"
-      class="three">
+    <a title="three" class="three">
       three
     </a>
-    <a
-      title="four"
-      class="four">
+    <a title="four" class="four">
       four
     </a>
   </aside>
@@ -26,5 +18,5 @@
 <script>
 export default {
   name: 'ListSpaced'
-}
+};
 </script>
