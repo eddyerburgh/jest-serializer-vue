@@ -123,9 +123,23 @@ function removeDataTestAttributes (html, options) {
 }
 
 module.exports = {
+  /**
+   * Test function for Jest's serializer API.
+   * Determines whether to pass the markup through the print function.
+   *
+   * @param  {string|object} received  The markup or Vue wrapper to be formatted
+   * @return {boolean}                 true = Tells Jest to run the print function
+   */
   test: function (received) {
     return isHtmlString(received) || isVueWrapper(received);
   },
+  /**
+   * Print function for Jest's serializer API.
+   * Formats markup according to options.
+   *
+   * @param  {string|object} received  The markup of Vue wrapper to be formatted
+   * @return {string}                  The formatted markup
+   */
   print: function (received) {
     const options = loadOptions();
     let html = received || '';
