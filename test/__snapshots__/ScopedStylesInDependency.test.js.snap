@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScopedStylesInDependency.vue Snapshot unchanged 1`] = `
+<div>
+  <div class="vgt-wrap ">
+    <!---->
+    <div class="vgt-inner-wrap">
+      <!---->
+      <!---->
+      <!---->
+      <div class="vgt-fixed-header">
+        <!---->
+      </div>
+      <div class="vgt-responsive" style="overflow: scroll-y; max-height: auto;">
+        <table class="vgt-table bordered ">
+          <thead>
+            <tr>
+              <!---->
+              <!---->
+              <th class="vgt-left-align sortable">
+                <span>Name</span>
+              </th>
+              <th class="vgt-left-align sortable">
+                <span>Age</span>
+              </th>
+            </tr>
+            <!---->
+          </thead>
+          <tbody>
+            <!---->
+            <tr class="">
+              <!---->
+              <!---->
+              <td class="vgt-left-align">
+                <span>
+                  Dave
+                </span>
+                <!---->
+              </td>
+              <td class="vgt-left-align">
+                <span>
+                  15
+                </span>
+                <!---->
+              </td>
+            </tr>
+            <!---->
+          </tbody>
+          <!---->
+        </table>
+      </div>
+      <!---->
+      <!---->
+    </div>
+  </div>
+</div>
+`;

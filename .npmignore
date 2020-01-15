@@ -1,0 +1,17 @@
+.git/
+node_modules/
+sample/
+src/conversion/cli-api.txt
+src/**/*.test.js
+.editorconfig
+.eslintrc.js
+.gitattributes
+.gitignore
+.npmignore
+.travis.yml
+check.js
+e2e-test.js
+README.md
+test.js
+try.js
+sample/flif.exe

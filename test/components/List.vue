@@ -2,7 +2,7 @@
   <ul>
     <li
       v-for="(item, key) in items"
-      :key="key"
+      :key="'item' + key"
     >
       {{ item }}
     </li>

@@ -19,6 +19,7 @@ function loadOptions () {
   let options = {
     removeDataTest: true,
     removeServerRendered: true,
+    removeDataVId: true,
     // To see available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
     pretty: {
       indent_char: ' ',
@@ -30,33 +31,26 @@ function loadOptions () {
     }
   };
 
-  if (
-    vueConfig &&
-    vueConfig.pluginOptions &&
-    vueConfig.pluginOptions.jestSerializer
-  ) {
-    if (vueConfig.pluginOptions.jestSerializer.pretty) {
-      options.pretty = vueConfig.pluginOptions.jestSerializer.pretty;
+  let vueConfigOptions = {};
+  if (vueConfig) {
+    if (vueConfig.pluginOptions && vueConfig.pluginOptions.jestSerializer) {
+      vueConfigOptions = vueConfig.pluginOptions.jestSerializer;
     }
-    if (typeof(vueConfig.pluginOptions.jestSerializer.removeDataTest) === 'boolean') {
-      options.removeDataTest = vueConfig.pluginOptions.jestSerializer.removeDataTest;
-    }
-    if (typeof(vueConfig.pluginOptions.jestSerializer.removeServerRendered) === 'boolean') {
-      options.removeServerRendered = vueConfig.pluginOptions.jestSerializer.removeServerRendered;
+    // Maybe one day these settings will be officially a part of the Vue CLI ¯\_(ツ)_/¯
+    if (vueConfig.jestSerializer) {
+      vueConfigOptions = vueConfig.jestSerializer;
     }
   }
 
-  // Maybe one day these settings will be officially a part of the Vue CLI ¯\_(ツ)_/¯
-  if (vueConfig && vueConfig.jestSerializer) {
-    if (vueConfig.jestSerializer.pretty) {
-      options.pretty = vueConfig.jestSerializer.pretty;
-    }
-    if (typeof(vueConfig.jestSerializer.removeDataTest) === 'boolean') {
-      options.removeDataTest = vueConfig.jestSerializer.removeDataTest;
-    }
-    if (typeof(vueConfig.jestSerializer.removeServerRendered) === 'boolean') {
-      options.removeServerRendered = vueConfig.jestSerializer.removeServerRendered;
-    }
+  options.pretty = vueConfigOptions.pretty || options.pretty;
+  if (typeof(vueConfigOptions.removeDataTest) === 'boolean') {
+    options.removeDataTest = vueConfigOptions.removeDataTest;
+  }
+  if (typeof(vueConfigOptions.removeServerRendered) === 'boolean') {
+    options.removeServerRendered = vueConfigOptions.removeServerRendered;
+  }
+  if (typeof(vueConfigOptions.removeDataVId) === 'boolean') {
+    options.removeDataVId = vueConfigOptions.removeDataVId;
   }
 
   return options;
@@ -122,6 +116,22 @@ function removeDataTestAttributes (html, options) {
   return html;
 }
 
+/**
+ * This removes data-v-1234abcd="" from your snapshots.
+ *
+ * @param  {string} html    The markup being serialized.
+ * @param  {object} options Options object for this serializer
+ * @return {string}         Modified HTML string
+ */
+function removeScopedStylesDataVIDAttributes (html, options) {
+  if (!options || options.removeDataVId) {
+    // [-\w]+ will catch 1 or more instaces of a-z, A-Z, 0-9, hyphen (-), or underscore (_)
+    return html.replace(/ data-v-[-\w]+=""/g, '');
+  }
+  return html;
+}
+
+
 module.exports = {
   /**
    * Test function for Jest's serializer API.
@@ -148,6 +158,7 @@ module.exports = {
     }
     html = removeServerRenderedText(html, options);
     html = removeDataTestAttributes(html, options);
+    html = removeScopedStylesDataVIDAttributes(html, options);
 
     return pretty(html, options.pretty);
   }

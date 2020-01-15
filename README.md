@@ -1,6 +1,6 @@
 # jest-serializer-vue-tjw
 
-[![Build Status](https://travis-ci.org/tjw-lint/jest-serializer-vue-tjw.svg?branch=master)](https://travis-ci.org/tjw-lint/jest-serializer-vue-tjw)
+[![Build Status](https://travis-ci.org/tjw-lint/jest-serializer-vue-tjw.svg?branch=master)](https://travis-ci.org/tjw-lint/jest-serializer-vue-tjw) ![MIT Licensed](https://img.shields.io/badge/License-MIT-brightgreen) ![Code of Conduct: No Ideologies](https://img.shields.io/badge/CoC-No%20Ideologies-blue)
 
 Jest Vue snapshot serializer
 
@@ -21,24 +21,20 @@ This is the before and after of using the default "pretty" options, and my optio
 ![Difference between the snapshot settings, my version makes the formatting cleaner and easier to see what actually changed in a failing snapshot](https://user-images.githubusercontent.com/4629794/53278405-f8685880-36d6-11e9-92f0-127e0673a23a.gif)
 
 
-## Installation
-
-```
-npm install --save-dev jest-serializer-vue-tjw
-```
-
-
 ## Usage
 
-You need to tell Jest to use the serializer. Add this to your Jest config:
+1. `npm install --save-dev jest-serializer-vue-tjw`
+1. You need to tell Jest to use the serializer. Add this to your Jest config:
 
-```
-"snapshotSerializers": [
-  "<rootDir>/node_modules/jest-serializer-vue-tjw"
-]
-```
+   ```js
+   "snapshotSerializers": [
+     "<rootDir>/node_modules/jest-serializer-vue-tjw"
+   ]
+   ```
 
-And your snapshot tests will be pretty printed 💅
+Then just use `.toMatchSnapshot('optional snapshot name');` in your tests:
+
+**Example:**
 
 ```js
 import { shallowMount } from '@vue/test-utils';
@@ -69,6 +65,7 @@ module.exports = {
     jestSerializer: {
       removeDataTest: true,
       removeServerRendered: true,
+      removeDataVId: true,
       // All available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
       pretty: {
         indent_char: ' ',
@@ -87,4 +84,5 @@ Setting              | Default           | Description
 :--                  | :--               | :--
 removeDataTest       | `true`            | Removes `data-test="whatever"` from your snapshots if true.
 removeServerRendered | `true`            | Removes `data-server-rendered="true"` from your snapshots if true.
+removeDataVId        | `true`            | Removes `data-v-1234abcd=""` from your snapshots. Important if a 3rd-party component uses scoped styles, to prevent ID changes from breaking your `mount` based tests when updating a dependency.
 pretty               | See above example | These options are passed into `pretty` to format the snapshot. To use `pretty`'s defaults pass in `true`. [See all available options here](https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js).
