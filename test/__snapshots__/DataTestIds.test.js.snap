@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataTestIds.vue Snapshot unchanged 1`] = `
+<ul>
+  <li>
+    data-server-rendered
+  </li>
+  <li>
+    data-test
+  </li>
+  <li>
+    data-testid
+  </li>
+  <li>
+    data-test-id
+  </li>
+  <li data-qa="data-qa">
+    data-qa
+  </li>
+</ul>
+`;

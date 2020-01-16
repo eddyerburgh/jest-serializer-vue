@@ -1,7 +1,7 @@
 {
   "name": "jest-serializer-vue-tjw",
   "description": "A superb jest serializer for Vue snapshots",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "main": "index.js",
   "scripts": {
     "lint": "eslint --ext .js,.vue .",
@@ -12,6 +12,7 @@
     "remote": "git remote rm eddyerburgh && git remote"
   },
   "dependencies": {
+    "lodash.clonedeep": "^4.5.0",
     "pretty": "^2.0.0"
   },
   "devDependencies": {

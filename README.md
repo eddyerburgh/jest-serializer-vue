@@ -8,7 +8,8 @@ Jest Vue snapshot serializer
 ## Why use this over the Edd's?
 
 1. Both versions automatically remove `data-server-rendered="true"`.
-1. This version automatically removes `data-test="whatever"` from your snapshots.
+1. This version automatically removes `data-test="whatever"` from your snapshots (also `data-testid` and `data-test-id`).
+1. This version can optionally remove `data-qa="whatever"` from your snapshots (disabled by default, see API for reasoning).
 1. This version automatically removes `data-v-1234abcd=""` from snapshots.
 1. This version will display JSON data stored in HTML attributes instead of `href="[object Object]"`
 1. This version has much better snapshot defaults.
@@ -66,6 +67,9 @@ module.exports = {
   pluginOptions: {
     jestSerializer: {
       removeDataTest: true,
+      removeDataTestid: true,
+      removeDataTestId: true,
+      removeDataQa: false,
       removeServerRendered: true,
       removeDataVId: true,
       stringifyObjects: true,
@@ -85,7 +89,10 @@ module.exports = {
 
 Setting              | Default           | Description
 :--                  | :--               | :--
-removeDataTest       | `true`            | Removes `data-test="whatever"` from your snapshots if true.
+removeDataTest       | `true`            | Removes `data-test="whatever"` from your snapshots if true. To also remove these from your production builds, [see here](https://forum.vuejs.org/t/how-to-remove-attributes-from-tags-inside-vue-components/24138).
+removeDataTestid     | `true`            | Removes `data-testid="whatever"` from your snapshots if true.
+removeDataTestId     | `true`            | Removes `data-test-id="whatever"` from your snapshots if true.
+removeDataQa         | `false`           | Removes `data-qa="whatever"` from your snapshots if true. `data-qa` is usually used by non-dev QA members. If they change in your snapshot, that indicates it may break someone else's E2E tests. So most using `data-qa` prefer they be left in by default.
 removeServerRendered | `true`            | Removes `data-server-rendered="true"` from your snapshots if true.
 removeDataVId        | `true`            | Removes `data-v-1234abcd=""` from your snapshots. Important if a 3rd-party component uses scoped styles, to prevent ID changes from breaking your `mount` based tests when updating a dependency.
 stringifyObjects     | `true`            | Replaces `title="[object Object]"` with `title="{a:'asdf'}"` in your snapshots, allowing you to see the data in the snapshot.
