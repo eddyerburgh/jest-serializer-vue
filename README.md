@@ -57,7 +57,7 @@ describe('MyComponent.vue', () => {
 
 ## API
 
-**ALL SETTINGS ARE OPTIONAL**. Below is the defaults. If you like them, you don't need to add anything to your Vue config.
+**ALL SETTINGS ARE OPTIONAL**. The defaults are below. If you like them, you don't need to add anything to your Vue config.
 
 In your `vue.config.js` file:
 
