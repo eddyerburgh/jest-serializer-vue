@@ -81,12 +81,12 @@ function convertVNodeDataAttributesToString (vnode) {
  * @return {string}          Modified HTML string
  */
 function replaceObjectObject (wrapper, options) {
-  let wrapperCopy = _cloneDeep(wrapper);
-  wrapperCopy.vnode = _cloneDeep(wrapper.vnode);
   if (
     (!options || options.stringifyObjects) &&
-    (wrapperCopy && wrapperCopy.vnode)
+    (wrapper && wrapper.vnode)
   ) {
+    let wrapperCopy = _cloneDeep(wrapper);
+    wrapperCopy.vnode = _cloneDeep(wrapper.vnode);
     convertVNodeDataAttributesToString(wrapperCopy.vnode);
     return vnodeToString(wrapperCopy.vnode);
   }
