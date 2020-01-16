@@ -9,9 +9,11 @@ Jest Vue snapshot serializer
 
 1. Both versions automatically remove `data-server-rendered="true"`.
 1. This version automatically removes `data-test="whatever"` from your snapshots.
+1. This version automatically removes `data-v-1234abcd=""` from snapshots.
+1. This version will display JSON data stored in HTML attributes instead of `href="[object Object]"`
 1. This version has much better snapshot defaults.
 1. This version lets you control your snapshot formatting with an API.
-1. Edd is busy and not maintaining his Vue repos right now. Cool dude though.
+1. Edd is busy and not maintaining his Vue repos right now. Cool dude though :sunglasses:.
 
 
 ## What do you mean by "much better snapshot defaults"?
