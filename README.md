@@ -66,6 +66,7 @@ module.exports = {
       removeDataTest: true,
       removeServerRendered: true,
       removeDataVId: true,
+      stringifyObjects: true,
       // All available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
       pretty: {
         indent_char: ' ',
@@ -85,4 +86,5 @@ Setting              | Default           | Description
 removeDataTest       | `true`            | Removes `data-test="whatever"` from your snapshots if true.
 removeServerRendered | `true`            | Removes `data-server-rendered="true"` from your snapshots if true.
 removeDataVId        | `true`            | Removes `data-v-1234abcd=""` from your snapshots. Important if a 3rd-party component uses scoped styles, to prevent ID changes from breaking your `mount` based tests when updating a dependency.
+stringifyObjects     | `true`            | Replaces `title="[object Object]"` with `title="{a:'asdf'}"` in your snapshots, allowing you to see the data in the snapshot.
 pretty               | See above example | These options are passed into `pretty` to format the snapshot. To use `pretty`'s defaults pass in `true`. [See all available options here](https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js).

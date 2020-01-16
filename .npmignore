@@ -11,6 +11,7 @@ src/**/*.test.js
 .travis.yml
 check.js
 e2e-test.js
+PULL_REQUEST_TEMPLATE.md
 README.md
 test.js
 try.js

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ObjectAttribute.vue Snapshot unchanged 1`] = `
+<div title="{a:true,b:'Some \\'text\\'',c:{d:{e:'23'},f:'\\'&quot;\\'&quot;'}}">
+  <h1 title="['asdf','qwer']">
+    text
+  </h1>
+</div>
+`;
