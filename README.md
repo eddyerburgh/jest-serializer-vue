@@ -11,7 +11,7 @@ Jest Vue snapshot serializer
 1. This version automatically removes `data-test="whatever"` from your snapshots (also `data-testid` and `data-test-id`).
 1. This version can optionally remove `data-qa="whatever"` from your snapshots (disabled by default, see API for reasoning).
 1. This version automatically removes `data-v-1234abcd=""` from snapshots.
-1. This version will display JSON data stored in HTML attributes instead of `href="[object Object]"`
+1. This version has an experimental feature to display JSON data stored in HTML attributes instead of `href="[object Object]"`
 1. This version has much better snapshot defaults.
 1. This version lets you control your snapshot formatting with an API.
 1. Edd is busy and not maintaining his Vue repos right now. Cool dude though :sunglasses:.
