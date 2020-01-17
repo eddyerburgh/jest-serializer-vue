@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recursive.vue Snapshots unchanged: Wrapper 1`] = `
+<div>
+  <span>3</span>
+  <div>
+    <span>2</span>
+    <div>
+      <span>1</span>
+      <!---->
+      <!---->
+    </div>
+    <div>
+      <span>1</span>
+      <!---->
+      <!---->
+    </div>
+  </div>
+  <div>
+    <span>2</span>
+    <div>
+      <span>1</span>
+      <!---->
+      <!---->
+    </div>
+    <div>
+      <span>1</span>
+      <!---->
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Recursive.vue Snapshots unchanged: Wrapper.html() 1`] = `
+<div>
+  <span>3</span>
+  <div>
+    <span>2</span>
+    <div>
+      <span>1</span>
+      <!---->
+      <!---->
+    </div>
+    <div>
+      <span>1</span>
+      <!---->
+      <!---->
+    </div>
+  </div>
+  <div>
+    <span>2</span>
+    <div>
+      <span>1</span>
+      <!---->
+      <!---->
+    </div>
+    <div>
+      <span>1</span>
+      <!---->
+      <!---->
+    </div>
+  </div>
+</div>
+`;

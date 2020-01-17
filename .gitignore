@@ -22,3 +22,5 @@ pids
 
 node_modules
 yarn.lock
+
+report.*.json

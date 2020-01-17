@@ -1,6 +1,10 @@
 <template>
-  <div :title="first">
-    <h1 :title="['asdf', 'qwer']">
+  <div :title="first" data-test="div">
+    <h1
+      :title="['asdf', 'qwer']"
+      class="active"
+      data-test="h1"
+    >
       text
     </h1>
   </div>

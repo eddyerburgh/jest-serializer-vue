@@ -20,7 +20,7 @@ function swapQuotes (str) {
  * @return {string}               stringified string
  */
 function stringify (obj) {
-  if (typeof obj !== 'object' || Array.isArray(obj)) {
+  if (typeof(obj) !== 'object' || Array.isArray(obj)) {
     return JSON.stringify(obj);
   }
 
@@ -42,7 +42,9 @@ function stringify (obj) {
  */
 function vnodeToString (vnode) {
   const vm = new Vue({
-    render: () => vnode
+    render: function () {
+      return vnode;
+    }
   });
   const html = vm.$mount().$el.outerHTML;
   vm.$destroy();
@@ -59,7 +61,12 @@ function convertVNodeDataAttributesToString (vnode) {
   if (vnode) {
     if (vnode.data && vnode.data.attrs) {
       for (const property in vnode.data.attrs) {
-        vnode.data.attrs[property] = swapQuotes(stringify(vnode.data.attrs[property]));
+        let value = vnode.data.attrs[property];
+        if (typeof(value) === 'string') {
+          vnode.data.attrs[property] = value;
+        } else {
+          vnode.data.attrs[property] = swapQuotes(stringify(value));
+        }
       }
     }
     if (vnode.children) {
@@ -69,6 +76,25 @@ function convertVNodeDataAttributesToString (vnode) {
     }
   }
 }
+
+// This does not seem to make an actual copy. It is still modifying the reference.
+/**
+ * Makes a copy of the vnode, so we are not mutating the original reference passed in by the test.
+ *
+ * @param  {object} vnode Vue's vnode from the wrapper
+ * @return {object}       A copy of the vnode
+ *
+function copyVnode (vnode) {
+  const vm = new Vue({
+    render: function () {
+      return vnode;
+    }
+  });
+  const copy = vm.$mount()._vnode;
+  vm.$destroy();
+  return copy;
+}
+ */
 
 /**
  * Checks settings and if Vue wrapper is valid, then converts
@@ -85,10 +111,10 @@ function replaceObjectObject (wrapper, options) {
     (!options || options.stringifyObjects) &&
     (wrapper && wrapper.vnode)
   ) {
-    let wrapperCopy = _cloneDeep(wrapper);
-    wrapperCopy.vnode = _cloneDeep(wrapper.vnode);
-    convertVNodeDataAttributesToString(wrapperCopy.vnode);
-    return vnodeToString(wrapperCopy.vnode);
+    // let vnode = copyVnode(wrapper.vnode);
+    let vnode = _cloneDeep(wrapper.vnode);
+    convertVNodeDataAttributesToString(vnode);
+    return vnodeToString(vnode);
   }
   return wrapper.html();
 }

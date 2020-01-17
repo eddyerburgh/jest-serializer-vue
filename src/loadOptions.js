@@ -41,7 +41,7 @@ function applySettings (vueConfigOptions) {
     removeDataQa: false,
     removeServerRendered: true,
     removeDataVId: true,
-    stringifyObjects: true,
+    stringifyObjects: false,
     // To see available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
     pretty: {
       indent_char: ' ',

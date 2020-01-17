@@ -9,6 +9,7 @@
 
 <script>
 import { VueGoodTable } from 'vue-good-table';
+
 export default {
   name: 'ScopedStylesInDependency',
   components: {

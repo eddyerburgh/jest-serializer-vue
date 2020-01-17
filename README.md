@@ -72,7 +72,7 @@ module.exports = {
       removeDataQa: false,
       removeServerRendered: true,
       removeDataVId: true,
-      stringifyObjects: true,
+      stringifyObjects: false,
       // All available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
       pretty: {
         indent_char: ' ',
@@ -95,5 +95,5 @@ removeDataTestId     | `true`            | Removes `data-test-id="whatever"` fro
 removeDataQa         | `false`           | Removes `data-qa="whatever"` from your snapshots if true. `data-qa` is usually used by non-dev QA members. If they change in your snapshot, that indicates it may break someone else's E2E tests. So most using `data-qa` prefer they be left in by default.
 removeServerRendered | `true`            | Removes `data-server-rendered="true"` from your snapshots if true.
 removeDataVId        | `true`            | Removes `data-v-1234abcd=""` from your snapshots. Important if a 3rd-party component uses scoped styles, to prevent ID changes from breaking your `mount` based tests when updating a dependency.
-stringifyObjects     | `true`            | Replaces `title="[object Object]"` with `title="{a:'asdf'}"` in your snapshots, allowing you to see the data in the snapshot.
+stringifyObjects     | `false`           | **EXPERIMENTAL** Replaces `title="[object Object]"` with `title="{a:'asdf'}"` in your snapshots, allowing you to see the data in the snapshot. Requires you to pass in `wrapper`, not `wrapper.html()`. This is still a work in progress. On deeply nested componets, it may exceed callstack.
 pretty               | See above example | These options are passed into `pretty` to format the snapshot. To use `pretty`'s defaults pass in `true`. [See all available options here](https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js).

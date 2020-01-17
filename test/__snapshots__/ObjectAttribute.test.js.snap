@@ -1,8 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ObjectAttribute.vue Snapshot unchanged 1`] = `
+exports[`ObjectAttribute.vue Snapshots unchanged: 1 wrapper.html() 1`] = `
+<div title="[object Object]">
+  <h1 title="asdf,qwer" class="active">
+    text
+  </h1>
+</div>
+`;
+
+exports[`ObjectAttribute.vue Snapshots unchanged: 2 wrapper 1`] = `
 <div title="{a:true,b:'Some \\'text\\'',c:{d:{e:'23'},f:'\\'&quot;\\'&quot;'}}">
-  <h1 title="['asdf','qwer']">
+  <h1 title="['asdf','qwer']" class="active">
+    text
+  </h1>
+</div>
+`;
+
+exports[`ObjectAttribute.vue Snapshots unchanged: 3 wrapper.html() 1`] = `
+<div title="[object Object]">
+  <h1 title="asdf,qwer" class="active">
+    text
+  </h1>
+</div>
+`;
+
+exports[`ObjectAttribute.vue Snapshots unchanged: 4 wrapper 1`] = `
+<div title="{a:true,b:'Some \\'text\\'',c:{d:{e:'23'},f:'\\'&quot;\\'&quot;'}}">
+  <h1 title="['asdf','qwer']" class="active">
     text
   </h1>
 </div>

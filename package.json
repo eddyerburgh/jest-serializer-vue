@@ -1,12 +1,12 @@
 {
   "name": "jest-serializer-vue-tjw",
   "description": "A superb jest serializer for Vue snapshots",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "main": "index.js",
   "scripts": {
     "lint": "eslint --ext .js,.vue .",
     "fix": "npm run lint -- --fix",
-    "test": "jest",
+    "test": "jest --runInBand",
     "test-debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --no-cache --runInBand -t \"ObjectAttribute\"",
     "validate": "npm run lint && npm test",
     "remote": "git remote rm eddyerburgh && git remote"
