@@ -11,6 +11,7 @@ Jest Vue snapshot serializer
 1. This version automatically removes `data-test="whatever"` from your snapshots (also `data-testid` and `data-test-id`).
 1. This version can optionally remove `data-qa="whatever"` from your snapshots (disabled by default, see API for reasoning).
 1. This version automatically removes `data-v-1234abcd=""` from snapshots.
+1. This version can optionally remove all html comments `<!-- whatever -->` from your snapshots.
 1. This version has an experimental feature to display JSON data stored in HTML attributes instead of `href="[object Object]"`
 1. This version has much better snapshot defaults.
 1. This version lets you control your snapshot formatting with an API.
@@ -66,6 +67,7 @@ In your `vue.config.js` file:
 module.exports = {
   pluginOptions: {
     jestSerializer: {
+      removeComments: false,
       removeDataTest: true,
       removeDataTestid: true,
       removeDataTestId: true,
@@ -89,6 +91,7 @@ module.exports = {
 
 Setting              | Default           | Description
 :--                  | :--               | :--
+removeComments       | `false`           | Removes all HTML comments from your snapshots. This is false be default, as sometimes these comments can infer important information about how your DOM was rendered. However, this is mostly just personal preference.
 removeDataTest       | `true`            | Removes `data-test="whatever"` from your snapshots if true. To also remove these from your production builds, [see here](https://forum.vuejs.org/t/how-to-remove-attributes-from-tags-inside-vue-components/24138).
 removeDataTestid     | `true`            | Removes `data-testid="whatever"` from your snapshots if true.
 removeDataTestId     | `true`            | Removes `data-test-id="whatever"` from your snapshots if true.

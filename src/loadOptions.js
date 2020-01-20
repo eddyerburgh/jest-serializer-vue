@@ -16,6 +16,7 @@ function booleanSettings (options, vueConfigOptions) {
     'removeDataQa',
     'removeServerRendered',
     'removeDataVId',
+    'removeComments',
     'stringifyObjects'
   ];
   booleanSettings.forEach(function (setting) {
@@ -41,6 +42,7 @@ function applySettings (vueConfigOptions) {
     removeDataQa: false,
     removeServerRendered: true,
     removeDataVId: true,
+    removeComments: false,
     stringifyObjects: false,
     // To see available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
     pretty: {
