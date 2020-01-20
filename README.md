@@ -5,7 +5,7 @@
 Jest Vue snapshot serializer
 
 
-## Why use this over the Edd's?
+## Why use this over the Edd's (AKA: Features list)?
 
 1. Both versions automatically remove `data-server-rendered="true"`.
 1. This version automatically removes `data-test="whatever"` from your snapshots (also `data-testid` and `data-test-id`).
@@ -124,6 +124,25 @@ pretty               | See above example | These options are passed into `pretty
    * `data-testid="whatever" `
    * `data-test-id="whatever"`
 1. All `data-v-whatever=""` will be removed. These are attributes added by Vue to help scope styles. Removing them from your snapshots makes updating scoped dependencies easier.
+
+```diff
+ <div>
+-  <h1 data-test="pageTitle" data-test-id="pageTitle" data-testid="pageTitle">
++  <h1>
+     The above specific data-attrubutes are removed by default.
+   </h1>
+   <div>
+-    <span class="active" data-v-b3d95ac7="">
++    <span class="active">
+       These data-v ID's are removed too by default.
+     </span>
+     <!---->
+     <!-- There's an option you can turn on to remove all HTML comments too -->
+     <!-- It's turned off by default, since they usually represent a v-if="false" -->
+     <!-- and maybe you want to know about that. If not, set removeComments: true -->
+   </div>
+ </div>
+```
 
 
 ### Avoiding breaking changes
