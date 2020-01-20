@@ -100,3 +100,35 @@ removeServerRendered | `true`            | Removes `data-server-rendered="true"`
 removeDataVId        | `true`            | Removes `data-v-1234abcd=""` from your snapshots. Important if a 3rd-party component uses scoped styles, to prevent ID changes from breaking your `mount` based tests when updating a dependency.
 stringifyObjects     | `false`           | **EXPERIMENTAL** Replaces `title="[object Object]"` with `title="{a:'asdf'}"` in your snapshots, allowing you to see the data in the snapshot. Requires you to pass in `wrapper`, not `wrapper.html()`. This is still a work in progress. On deeply nested componets, it may exceed callstack.
 pretty               | See above example | These options are passed into `pretty` to format the snapshot. To use `pretty`'s defaults pass in `true`. [See all available options here](https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js).
+
+
+## Migrating from v2 to v3
+
+1. First you will need to install this new dependency:
+   * `npm install --save-dev jest-serializer-vue-tjw`
+   * If you have `jest-serializer-vue` in your dependencies or devDependencies it can be removed.
+1. Next you will need to change your Jest config settings. Make sure to replace the reference to the previous (non-TJW) version with the new version:
+   ```js
+   "snapshotSerializers": [
+     "<rootDir>/node_modules/jest-serializer-vue-tjw"
+   ]
+   ```
+1. Run your test command with `-- -u` at the end so it will update your snapshots, for example:
+   * `npm run test:unit -- -u`
+
+
+### Breaking changes to expect in your snapshots during migration
+
+1. Test tokens will be removed. These are used to target elements in your tests.
+   * `data-test="whatever"`
+   * `data-testid="whatever" `
+   * `data-test-id="whatever"`
+1. All `data-v-whatever=""` will be removed. These are attributes added by Vue to help scope styles. Removing them from your snapshots makes updating scoped dependencies easier.
+
+
+### Avoiding breaking changes
+
+Though all default settings are designed to be the best choice for most people, if you want to opt out of these (or opt-in to other changes, like removing HTML comments from snapshots) you can via a settings object in your Vue config.
+
+1. Edit your `vue.config.js` in the root of your project (or create it, if you do not have one).
+  * See the **API** section in these docs for details about customizing your preferences.
