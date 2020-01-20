@@ -6,14 +6,18 @@ const isVueWrapper = received => (
   typeof received === 'object' &&
   typeof received.isVueInstance === 'function'
 )
+const removeServerRenderedText = html => html.replace(/ data-server-rendered="true"/, '')
+// [-\w]+ will catch 1 or more instances of a-z, A-Z, 0-9, hyphen (-), or underscore (_)
+const removeDataTestAttributes = html => html.replace(/ data-test="[-\w]+"/g, '')
 
 module.exports = {
   test (received) {
     return isHtmlString(received) || isVueWrapper(received)
   },
   print (received) {
-    const html = (isVueWrapper(received) ? received.html() : received) || ''
-    const removedServerRenderedText = html.replace(/ data-server-rendered="true"/, '')
-    return beautify(removedServerRenderedText, { indent_size: 2 })
+    let html = (isVueWrapper(received) ? received.html() : received) || ''
+    html = removeServerRenderedText(html)
+    html = removeDataTestAttributes(html)
+    return beautify(html, { indent_size: 2 })
   }
 }
