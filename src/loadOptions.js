@@ -10,13 +10,13 @@ const path = require('path');
  */
 function booleanSettings (options, vueConfigOptions) {
   const booleanSettings = [
+    'removeComments',
     'removeDataTest',
     'removeDataTestid',
     'removeDataTestId',
     'removeDataQa',
-    'removeServerRendered',
     'removeDataVId',
-    'removeComments',
+    'removeServerRendered',
     'stringifyObjects'
   ];
   booleanSettings.forEach(function (setting) {
@@ -36,14 +36,6 @@ function booleanSettings (options, vueConfigOptions) {
  */
 function applySettings (vueConfigOptions) {
   let defaultSettings = {
-    removeDataTest: true,
-    removeDataTestid: true,
-    removeDataTestId: true,
-    removeDataQa: false,
-    removeServerRendered: true,
-    removeDataVId: true,
-    removeComments: false,
-    stringifyObjects: false,
     // To see available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
     pretty: {
       indent_char: ' ',
@@ -52,7 +44,15 @@ function applySettings (vueConfigOptions) {
       inline: [],
       sep: '\n',
       unformatted: ['code', 'pre']
-    }
+    },
+    removeComments: false,
+    removeDataTest: true,
+    removeDataTestid: true,
+    removeDataTestId: true,
+    removeDataQa: false,
+    removeDataVId: true,
+    removeServerRendered: true,
+    stringifyObjects: false
   };
 
   let options = defaultSettings;
