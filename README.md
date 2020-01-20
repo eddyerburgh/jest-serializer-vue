@@ -119,6 +119,7 @@ stringifyObjects     | `false`           | **EXPERIMENTAL** Replaces `title="[ob
 
 ### Breaking changes to expect in your snapshots during migration
 
+1. General formatting will be improved to aid in readability and better diffs.
 1. Test tokens will be removed. These are used to target elements in your tests.
    * `data-test="whatever"`
    * `data-testid="whatever" `
@@ -163,9 +164,9 @@ stringifyObjects     | `false`           | **EXPERIMENTAL** Replaces `title="[ob
 ```
 
 
-### Avoiding breaking changes
+### Avoiding breaking changes (not recommended)
 
 Though all default settings are designed to be the best choice for most people, if you want to opt out of these (or opt-in to other changes, like removing HTML comments from snapshots) you can via a settings object in your Vue config.
 
 1. Edit your `vue.config.js` in the root of your project (or create it, if you do not have one).
-  * See the **API** section in these docs for details about customizing your preferences.
+   * See the **API** section in these docs for details about customizing your preferences.
