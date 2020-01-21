@@ -107,6 +107,7 @@ function removeAllComments (html, options) {
     // Also removes a trailing newline if it exists.
     return html.replace(/(?=<!--)([\s\S]*?)-->(\n)?/g, '');
   }
+  return html;
 }
 
 module.exports = {
