@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ListSpaced.vue Default pretty options 1`] = `
+<aside role="banner" class="test"><a title="one" class="one">
+    one
+  </a> <a title="two" class="two">
+    two
+  </a> <a title="three" class="three">
+    three
+  </a> <a title="four" class="four">
+    four
+  </a></aside>
+`;
+
 exports[`ListSpaced.vue Snapshot unchanged 1`] = `
 <aside role="banner" class="test">
   <a title="one" class="one">

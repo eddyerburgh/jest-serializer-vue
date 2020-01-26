@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataTestIds.vue Only data-qa removed 1`] = `
+<ul>
+  <li data-server-rendered="true">
+    data-server-rendered
+  </li>
+  <li data-test="data-test">
+    data-test
+  </li>
+  <li data-testid="data-testid">
+    data-testid
+  </li>
+  <li data-test-id="data-test-id">
+    data-test-id
+  </li>
+  <li>
+    data-qa
+  </li>
+</ul>
+`;
+
+exports[`DataTestIds.vue Only data-server-rendered removed 1`] = `
+<ul>
+  <li>
+    data-server-rendered
+  </li>
+  <li data-test="data-test">
+    data-test
+  </li>
+  <li data-testid="data-testid">
+    data-testid
+  </li>
+  <li data-test-id="data-test-id">
+    data-test-id
+  </li>
+  <li data-qa="data-qa">
+    data-qa
+  </li>
+</ul>
+`;
+
+exports[`DataTestIds.vue Only data-test removed 1`] = `
+<ul>
+  <li data-server-rendered="true">
+    data-server-rendered
+  </li>
+  <li>
+    data-test
+  </li>
+  <li data-testid="data-testid">
+    data-testid
+  </li>
+  <li data-test-id="data-test-id">
+    data-test-id
+  </li>
+  <li data-qa="data-qa">
+    data-qa
+  </li>
+</ul>
+`;
+
+exports[`DataTestIds.vue Only data-test-id removed 1`] = `
+<ul>
+  <li data-server-rendered="true">
+    data-server-rendered
+  </li>
+  <li data-test="data-test">
+    data-test
+  </li>
+  <li data-testid="data-testid">
+    data-testid
+  </li>
+  <li>
+    data-test-id
+  </li>
+  <li data-qa="data-qa">
+    data-qa
+  </li>
+</ul>
+`;
+
+exports[`DataTestIds.vue Only data-testid removed 1`] = `
+<ul>
+  <li data-server-rendered="true">
+    data-server-rendered
+  </li>
+  <li data-test="data-test">
+    data-test
+  </li>
+  <li>
+    data-testid
+  </li>
+  <li data-test-id="data-test-id">
+    data-test-id
+  </li>
+  <li data-qa="data-qa">
+    data-qa
+  </li>
+</ul>
+`;
+
+exports[`DataTestIds.vue Remove data-server-rendered, data-test, data-testid, data-test-id by default 1`] = `
+<ul>
+  <li>
+    data-server-rendered
+  </li>
+  <li>
+    data-test
+  </li>
+  <li>
+    data-testid
+  </li>
+  <li>
+    data-test-id
+  </li>
+  <li data-qa="data-qa">
+    data-qa
+  </li>
+</ul>
+`;

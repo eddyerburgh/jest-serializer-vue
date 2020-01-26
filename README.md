@@ -1,6 +1,6 @@
 # jest-serializer-vue-tjw
 
-[![Build Status](https://travis-ci.org/tjw-lint/jest-serializer-vue-tjw.svg?branch=master)](https://travis-ci.org/tjw-lint/jest-serializer-vue-tjw) ![MIT Licensed](https://img.shields.io/badge/License-MIT-brightgreen) ![Code of Conduct: No Ideologies](https://img.shields.io/badge/CoC-No%20Ideologies-blue)
+[![Build Status](https://travis-ci.org/tjw-lint/jest-serializer-vue-tjw.svg?branch=master)](https://travis-ci.org/tjw-lint/jest-serializer-vue-tjw) ![MIT Licensed](https://img.shields.io/badge/License-MIT-brightgreen) ![Code of Conduct: No Ideologies](https://img.shields.io/badge/CoC-No%20Ideologies-blue) [![Test Coverage](https://img.shields.io/coveralls/github/tjw-lint/jest-serializer-vue-tjw?label=Test%20Coverage&logo=jest)](https://coveralls.io/github/tjw-lint/jest-serializer-vue-tjw) ![Lint Coverage: 100%](https://img.shields.io/badge/Lint%20Coverage-100%25-brightgreen.svg?logo=eslint)
 
 Jest Vue snapshot serializer
 

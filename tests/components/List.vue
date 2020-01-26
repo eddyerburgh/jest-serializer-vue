@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul v-if="items">
     <li
       v-for="(item, key) in items"
       :key="'item' + key"
@@ -15,9 +15,7 @@ export default {
   props: {
     items: {
       type: Array,
-      default: function () {
-        return [];
-      }
+      default: undefined
     }
   }
 };

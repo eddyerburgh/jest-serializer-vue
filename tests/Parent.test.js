@@ -1,7 +1,13 @@
+const helpers = require('./helpers.js');
+
 import { mount, shallowMount } from '@vue/test-utils';
 import Parent from './components/Parent.vue';
 
 describe('Parent.vue', () => {
+  beforeEach(() => {
+    helpers.mockSettings({});
+  });
+
   test('Mount snapshot', () => {
     const wrapper = mount(Parent);
 

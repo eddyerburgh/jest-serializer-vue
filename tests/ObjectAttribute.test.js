@@ -1,8 +1,14 @@
+const helpers = require('./helpers.js');
+
 import { shallowMount } from '@vue/test-utils';
 import ObjectAttribute from './components/ObjectAttribute.vue';
 
 describe('ObjectAttribute.vue', () => {
   test('Snapshots unchanged', () => {
+    helpers.mockSettings({
+      stringifyObjects: true
+    });
+
     const wrapper = shallowMount(ObjectAttribute);
 
     expect(wrapper.html())

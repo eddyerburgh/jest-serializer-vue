@@ -1,6 +1,7 @@
+const helpers = require('./helpers.js');
+
 describe('RemoveComments', () => {
-  test('Snapshot is unchanged', () => {
-    const commented = `
+  const commented = `
 <div>
   <span>3</span>
   <!---->
@@ -35,6 +36,20 @@ describe('RemoveComments', () => {
 </div>
 <!---->
 `;
+
+  test('Comments removed', () => {
+    helpers.mockSettings({
+      removeComments: true
+    });
+
+    expect(commented.trim())
+      .toMatchSnapshot();
+  });
+
+  test('Comments remain', () => {
+    helpers.mockSettings({
+      removeComments: false
+    });
 
     expect(commented.trim())
       .toMatchSnapshot();

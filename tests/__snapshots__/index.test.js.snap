@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index Empty vnode 1`] = `""`;
+
+exports[`Index Load options from alternate path 1`] = `
+<div>
+  <div></div>
+</div>
+`;
+
+exports[`Index Undefined 1`] = `""`;
+
+exports[`Index Vue config is empty 1`] = `
+<div>
+  <div>
+    <!---->
+  </div>
+</div>
+`;

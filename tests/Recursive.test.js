@@ -1,3 +1,5 @@
+const helpers = require('./helpers.js');
+
 import { mount } from '@vue/test-utils';
 import Recursive from './components/Recursive.vue';
 
@@ -8,6 +10,10 @@ import Recursive from './components/Recursive.vue';
 
 describe('Recursive.vue', () => {
   test('Snapshots unchanged', () => {
+    helpers.mockSettings({
+      stringifyObjects: true
+    });
+
     const wrapper = mount(Recursive, {
       propsData: {
         number: 3
