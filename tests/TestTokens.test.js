@@ -1,13 +1,13 @@
 const helpers = require('./helpers.js');
 
 import { shallowMount } from '@vue/test-utils';
-import DataTestIds from './components/DataTestIds.vue';
+import TestTokens from './components/TestTokens.vue';
 
-describe('DataTestIds.vue', () => {
+describe('TestTokens.vue', () => {
   test('Remove data-server-rendered, data-test, data-testid, data-test-id by default', () => {
     helpers.mockSettings({});
 
-    const wrapper = shallowMount(DataTestIds);
+    const wrapper = shallowMount(TestTokens);
 
     expect(wrapper)
       .toMatchSnapshot();
@@ -19,10 +19,11 @@ describe('DataTestIds.vue', () => {
       removeDataTest: false,
       removeDataTestid: false,
       removeDataTestId: false,
-      removeDataQa: false
+      removeDataQa: false,
+      removeIdTest: false
     });
 
-    const wrapper = shallowMount(DataTestIds);
+    const wrapper = shallowMount(TestTokens);
 
     expect(wrapper)
       .toMatchSnapshot();
@@ -34,10 +35,11 @@ describe('DataTestIds.vue', () => {
       removeDataTest: true,
       removeDataTestid: false,
       removeDataTestId: false,
-      removeDataQa: false
+      removeDataQa: false,
+      removeIdTest: false
     });
 
-    const wrapper = shallowMount(DataTestIds);
+    const wrapper = shallowMount(TestTokens);
 
     expect(wrapper)
       .toMatchSnapshot();
@@ -49,10 +51,11 @@ describe('DataTestIds.vue', () => {
       removeDataTest: false,
       removeDataTestid: true,
       removeDataTestId: false,
-      removeDataQa: false
+      removeDataQa: false,
+      removeIdTest: false
     });
 
-    const wrapper = shallowMount(DataTestIds);
+    const wrapper = shallowMount(TestTokens);
 
     expect(wrapper)
       .toMatchSnapshot();
@@ -64,10 +67,11 @@ describe('DataTestIds.vue', () => {
       removeDataTest: false,
       removeDataTestid: false,
       removeDataTestId: true,
-      removeDataQa: false
+      removeDataQa: false,
+      removeIdTest: false
     });
 
-    const wrapper = shallowMount(DataTestIds);
+    const wrapper = shallowMount(TestTokens);
 
     expect(wrapper)
       .toMatchSnapshot();
@@ -79,10 +83,27 @@ describe('DataTestIds.vue', () => {
       removeDataTest: false,
       removeDataTestid: false,
       removeDataTestId: false,
-      removeDataQa: true
+      removeDataQa: true,
+      removeIdTest: false
     });
 
-    const wrapper = shallowMount(DataTestIds);
+    const wrapper = shallowMount(TestTokens);
+
+    expect(wrapper)
+      .toMatchSnapshot();
+  });
+
+  test('Only id="test" removed', () => {
+    helpers.mockSettings({
+      removeServerRendered: false,
+      removeDataTest: false,
+      removeDataTestid: false,
+      removeDataTestId: false,
+      removeDataQa: false,
+      removeIdTest: true
+    });
+
+    const wrapper = shallowMount(TestTokens);
 
     expect(wrapper)
       .toMatchSnapshot();

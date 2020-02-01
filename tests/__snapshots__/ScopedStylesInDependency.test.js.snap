@@ -14,7 +14,7 @@ exports[`ScopedStylesInDependency.vue Snapshot data-v ids remain 1`] = `
                 <span data-v-13ae5fa3="">Name</span>
               </th>
               <th data-v-13ae5fa3="" class="vgt-left-align sortable">
-                <span data-v-13ae5fa3="">Age</span>
+                <span data-v-13ae5fa3="">Favorite data-v-id=""</span>
               </th>
             </tr>
           </thead>
@@ -27,7 +27,7 @@ exports[`ScopedStylesInDependency.vue Snapshot data-v ids remain 1`] = `
               </td>
               <td class="vgt-left-align">
                 <span>
-                  15
+                  data-v-13ae5fa3=""
                 </span>
               </td>
             </tr>
@@ -53,7 +53,7 @@ exports[`ScopedStylesInDependency.vue Snapshot data-v ids removed 1`] = `
                 <span>Name</span>
               </th>
               <th class="vgt-left-align sortable">
-                <span>Age</span>
+                <span>Favorite</span>
               </th>
             </tr>
           </thead>
@@ -66,7 +66,7 @@ exports[`ScopedStylesInDependency.vue Snapshot data-v ids removed 1`] = `
               </td>
               <td class="vgt-left-align">
                 <span>
-                  15
+
                 </span>
               </td>
             </tr>

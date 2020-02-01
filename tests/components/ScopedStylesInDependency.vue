@@ -23,15 +23,15 @@ export default {
           field: 'name'
         },
         {
-          label: 'Age',
-          field: 'age'
+          label: 'Favorite data-v-id=""',
+          field: 'favorite'
         }
       ],
       rows: [
         {
           id: 1,
           name: 'Dave',
-          age: 15
+          favorite: 'data-v-13ae5fa3=""'
         }
       ]
     };

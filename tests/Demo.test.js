@@ -17,7 +17,7 @@ describe('Demo', () => {
   </div>
 
   <div data-server-rendered="true">
-    <h3 class="inline-block">Default formatting is improved</h3> <span><i class="fa fa-spinner"></i> <span class="sr-only">Loading...</span></span> <a><button type="button class="primary"><i class="fa fa-plus"></i>
+    <h3 class="inline-block">Default formatting is improved</h3> <span><i class="fa fa-spinner"></i> <span class="sr-only">Loading...</span></span> <a><button type="button" class="primary"><i class="fa fa-plus"></i>
         The formatting here is completely customizable (see API).
     </button></a>
   </div>
