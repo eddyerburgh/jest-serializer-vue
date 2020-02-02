@@ -10,6 +10,7 @@ const path = require('path');
  */
 function booleanSettings (options, vueConfigOptions) {
   const booleanSettings = [
+    'removeClassTest',
     'removeComments',
     'removeDataTest',
     'removeDataTestid',
@@ -46,6 +47,7 @@ function applySettings (vueConfigOptions) {
       sep: '\n',
       unformatted: ['code', 'pre']
     },
+    removeClassTest: false,
     removeComments: false,
     removeDataTest: true,
     removeDataTestid: true,

@@ -1,7 +1,7 @@
 {
   "name": "jest-serializer-vue-tjw",
   "description": "A superb jest serializer for Vue snapshots",
-  "version": "3.6.0",
+  "version": "3.7.0",
   "main": "index.js",
   "scripts": {
     "lint": "eslint --ext .js,.vue .",

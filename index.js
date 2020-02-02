@@ -3,6 +3,7 @@ const JSDOM = require('jsdom').JSDOM;
 
 const loadOptions = require('./src/loadOptions.js');
 const replaceObjectObject = require('./src/replaceObjectObject.js');
+const removeTestTokens = require('./src/removeTestTokens.js');
 
 /**
  * Determines if the passed in value is markup.
@@ -50,60 +51,6 @@ function removeServerRenderedText (html, options) {
 
     return dom.window.document.body.innerHTML;
   }
-  return html;
-}
-
-/**
- * This removes the following from your snapshots:
- * data-test="whatever"
- * data-testid="whatever"
- * data-test-id="whatever"
- * data-qa="whatever"
- *
- * If you also want to remove them from your production builds, see:
- * https://forum.vuejs.org/t/how-to-remove-attributes-from-tags-inside-vue-components/24138
- *
- * @param  {string} html     The markup being serialized
- * @param  {object} options  Options object for this serializer
- * @return {string}          Modified HTML string
- */
-function removeTestTokens (html, options) {
-  const dom = new JSDOM(html);
-
-  if (!options || options.removeDataTest) {
-    let elements = dom.window.document.querySelectorAll('[data-test]');
-    elements.forEach(function (element) {
-      element.removeAttribute('data-test');
-    });
-  }
-  if (!options || options.removeDataTestid) {
-    let elements = dom.window.document.querySelectorAll('[data-testid]');
-    elements.forEach(function (element) {
-      element.removeAttribute('data-testid');
-    });
-  }
-  if (!options || options.removeDataTestId) {
-    let elements = dom.window.document.querySelectorAll('[data-test-id]');
-    elements.forEach(function (element) {
-      element.removeAttribute('data-test-id');
-    });
-  }
-  if (options && options.removeDataQa) {
-    let elements = dom.window.document.querySelectorAll('[data-qa]');
-    elements.forEach(function (element) {
-      element.removeAttribute('data-qa');
-    });
-  }
-  if (options && options.removeIdTest) {
-    const elements = dom.window.document.querySelectorAll('[id]');
-    elements.forEach(function (element) {
-      if (element.attributes.id.value.startsWith('test')) {
-        element.removeAttribute('id');
-      }
-    });
-  }
-
-  html = dom.window.document.body.innerHTML;
   return html;
 }
 

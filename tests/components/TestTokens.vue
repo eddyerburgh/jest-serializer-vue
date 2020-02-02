@@ -1,5 +1,5 @@
 <template>
-  <ul id="tokens">
+  <ul id="tokens" class="tokens token">
     <li data-server-rendered="true">
       data-server-rendered="true"
     </li>
@@ -23,6 +23,24 @@
     </li>
     <li id="test-id">
       id="test-id"
+    </li>
+    <li class="test">
+      class="test"
+    </li>
+    <li class="testToken">
+      class="testToken"
+    </li>
+    <li class="test-token">
+      class="test-token"
+    </li>
+    <li class="test-token testToken test">
+      class="test-token testToken test"
+    </li>
+    <li class="test active">
+      class="test active"
+    </li>
+    <li :class="{ 'active': false }">
+      class=""
     </li>
   </ul>
 </template>

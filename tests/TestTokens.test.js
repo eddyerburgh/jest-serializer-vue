@@ -20,6 +20,7 @@ describe('TestTokens.vue', () => {
       removeDataTestid: false,
       removeDataTestId: false,
       removeDataQa: false,
+      removeClassTest: false,
       removeIdTest: false
     });
 
@@ -36,6 +37,7 @@ describe('TestTokens.vue', () => {
       removeDataTestid: false,
       removeDataTestId: false,
       removeDataQa: false,
+      removeClassTest: false,
       removeIdTest: false
     });
 
@@ -52,6 +54,7 @@ describe('TestTokens.vue', () => {
       removeDataTestid: true,
       removeDataTestId: false,
       removeDataQa: false,
+      removeClassTest: false,
       removeIdTest: false
     });
 
@@ -68,6 +71,7 @@ describe('TestTokens.vue', () => {
       removeDataTestid: false,
       removeDataTestId: true,
       removeDataQa: false,
+      removeClassTest: false,
       removeIdTest: false
     });
 
@@ -84,6 +88,7 @@ describe('TestTokens.vue', () => {
       removeDataTestid: false,
       removeDataTestId: false,
       removeDataQa: true,
+      removeClassTest: false,
       removeIdTest: false
     });
 
@@ -100,7 +105,25 @@ describe('TestTokens.vue', () => {
       removeDataTestid: false,
       removeDataTestId: false,
       removeDataQa: false,
+      removeClassTest: false,
       removeIdTest: true
+    });
+
+    const wrapper = shallowMount(TestTokens);
+
+    expect(wrapper)
+      .toMatchSnapshot();
+  });
+
+  test('Only class="test" removed', () => {
+    helpers.mockSettings({
+      removeServerRendered: false,
+      removeDataTest: false,
+      removeDataTestid: false,
+      removeDataTestId: false,
+      removeDataQa: false,
+      removeClassTest: true,
+      removeIdTest: false
     });
 
     const wrapper = shallowMount(TestTokens);
