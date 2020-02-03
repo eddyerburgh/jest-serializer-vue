@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loadOptions.js Vue config does not exist 1`] = `
+Object {
+  "formatting": Object {
+    "indent_char": " ",
+    "indent_inner_html": true,
+    "indent_size": 2,
+    "inline": Array [],
+    "sep": "
+",
+    "unformatted": Array [
+      "code",
+      "pre",
+    ],
+  },
+  "removeClassTest": false,
+  "removeComments": false,
+  "removeDataQa": false,
+  "removeDataTest": true,
+  "removeDataTestId": true,
+  "removeDataTestid": true,
+  "removeDataVId": true,
+  "removeIdTest": false,
+  "removeServerRendered": true,
+  "stringifyObjects": false,
+}
+`;

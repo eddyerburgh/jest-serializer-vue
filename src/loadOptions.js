@@ -1,4 +1,3 @@
-const fs = require('fs');
 const path = require('path');
 
 /**
@@ -80,9 +79,10 @@ function applySettings (vueConfigOptions) {
  * Loads the options from the vue.config.js file.
  * If none are found, fallsback to default settings.
  *
- * @return {object}  An options object for what to remove and how to format the snapshot markup
+ * @param  {object} fs  The Node file system module, or a mock for testing
+ * @return {object}     An options object for what to remove and how to format the snapshot markup
  */
-function loadOptions () {
+function loadOptions (fs) {
   const vueConfigLocation = path.join(process.cwd(), 'vue.config.js');
   let vueConfig;
   if (fs.existsSync(vueConfigLocation)) {

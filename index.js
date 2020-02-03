@@ -1,4 +1,5 @@
 const beautify = require('js-beautify').html;
+const fs = require('fs');
 const JSDOM = require('jsdom').JSDOM;
 
 const loadOptions = require('./src/loadOptions.js');
@@ -126,7 +127,7 @@ module.exports = {
    * @return {string}                  The formatted markup
    */
   print: function (received) {
-    const options = loadOptions();
+    const options = loadOptions(fs);
 
     let html = received || '';
     if (isVueWrapper(received)) {
