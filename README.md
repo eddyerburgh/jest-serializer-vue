@@ -23,7 +23,7 @@ Jest Vue snapshot serializer
 
 ## What do you mean by "much better snapshot defaults"?
 
-This is the before and after of using the default "pretty" options, and my options (which you can change with the API below, something Edd's version does not offer).
+This is the before and after of using the default formatting options, and my options (which you can change with the API below, something Edd's version does not offer).
 
 ![Difference between the snapshot settings, my version makes the formatting cleaner and easier to see what actually changed in a failing snapshot](https://user-images.githubusercontent.com/4629794/53278405-f8685880-36d6-11e9-92f0-127e0673a23a.gif)
 
@@ -71,7 +71,7 @@ module.exports = {
   pluginOptions: {
     jestSerializer: {
       // All available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
-      pretty: {
+      formatting: {
         indent_char: ' ',
         indent_inner_html: true,
         indent_size: 2,
@@ -96,7 +96,7 @@ module.exports = {
 
 Setting              | Default           | Description
 :--                  | :--               | :--
-pretty               | See above example | These options are passed into `pretty` to format the snapshot. To use `pretty`'s defaults pass in `true`. [See all available options here](https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js).
+formatting           | See above example | These options format the snapshot. [See all available options here](https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js).
 removeClassTest      | `false`           | Removes all CSS classes that start with "test", `class="test-whatever"`. **Warning:** Don't use this approach. Use `data-test` instead. It is better suited for this because it doesn't conflate CSS and test tokens.
 removeComments       | `false`           | Removes all HTML comments from your snapshots. This is false be default, as sometimes these comments can infer important information about how your DOM was rendered. However, this is mostly just personal preference.
 removeDataTest       | `true`            | Removes `data-test="whatever"` from your snapshots if true. To also remove these from your production builds, [see here](https://forum.vuejs.org/t/how-to-remove-attributes-from-tags-inside-vue-components/24138).
@@ -176,7 +176,34 @@ stringifyObjects     | `false`           | **EXPERIMENTAL** Replaces `title="[ob
 Though all default settings are designed to be the best choice for most people, if you want to opt out of these (or opt-in to other changes, like removing HTML comments from snapshots) you can via a settings object in your Vue config.
 
 1. Edit your `vue.config.js` in the root of your project (or create it, if you do not have one).
-   * See the **API** section in these docs for details about customizing your preferences.
+1. The following are the `jest-serializer-vue` v2.0.2 settings:
+
+```js
+module.exports = {
+  pluginOptions: {
+    jestSerializer: {
+      // All available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
+      formatting: {
+        unformatted: ['code', 'pre', 'em', 'strong', 'span'],
+        indent_inner_html: true,
+        indent_char: ' ',
+        indent_size: 2,
+        sep: '\n'
+      },
+      removeClassTest: false,
+      removeComments: false,
+      removeDataTest: false,
+      removeDataTestid: false,
+      removeDataTestId: false,
+      removeDataQa: false,
+      removeDataVId: false,
+      removeIdTest: false,
+      removeServerRendered: true,
+      stringifyObjects: false
+    }
+  }
+};
+```
 
 
 ## FAQs & tips
@@ -197,10 +224,10 @@ test('Click link', () => {
 
 ```
 
-**I have some code that I don't want formatted. How do I "opt out" of the settings for one test?** - You can skip the snapshots and just do a string comparison directly, without a snapshot. This is useful when the actual whitespace in the DOM is important and needs to be captured properly without `pretty` being applied.
+**I have some code that I don't want formatted. How do I "opt out" of the settings for one test?** - You can skip the snapshots and just do a string comparison directly, without a snapshot. This is useful when the actual whitespace in the DOM is important and needs to be captured properly without formatting being applied.
 
 ```js
-test('Manually testing to skip the snapshot serializer', () => {
+test('Spacing around links is accurate', () => {
   const wrapper = shallowMount(YourComponent);
   const section = wrapper.find('[data-test-id="specificSection"]');
 

@@ -1,4 +1,4 @@
-const pretty = require('pretty');
+const beautify = require('js-beautify').html;
 const JSDOM = require('jsdom').JSDOM;
 
 const loadOptions = require('./src/loadOptions.js');
@@ -118,6 +118,6 @@ module.exports = {
     html = removeScopedStylesDataVIDAttributes(html, options);
     html = removeAllComments(html, options);
 
-    return pretty(html, options.pretty);
+    return beautify(html, options.formatting);
   }
 };

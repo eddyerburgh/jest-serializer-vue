@@ -33,7 +33,7 @@ describe('Demo', () => {
 
   test('Inverted settings', () => {
     helpers.mockSettings({
-      pretty: true,
+      formatting: {},
       removeComments: true,
       removeDataTest: false,
       removeDataTestid: false,
@@ -42,6 +42,31 @@ describe('Demo', () => {
       removeDataVId: false,
       removeServerRendered: false,
       stringifyObjects: true
+    });
+
+    expect(demo.trim())
+      .toMatchSnapshot();
+  });
+
+  test('v2.0.2 settings', () => {
+    helpers.mockSettings({
+      formatting: {
+        unformatted: ['code', 'pre', 'em', 'strong', 'span'],
+        indent_inner_html: true,
+        indent_char: ' ',
+        indent_size: 2,
+        sep: '\n'
+      },
+      removeClassTest: false,
+      removeComments: false,
+      removeDataTest: false,
+      removeDataTestid: false,
+      removeDataTestId: false,
+      removeDataQa: false,
+      removeDataVId: false,
+      removeIdTest: false,
+      removeServerRendered: true,
+      stringifyObjects: false
     });
 
     expect(demo.trim())

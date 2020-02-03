@@ -12,9 +12,9 @@ describe('ListSpaced.vue', () => {
       .toMatchSnapshot();
   });
 
-  test('Default pretty options', () => {
+  test('Default formatting options', () => {
     helpers.mockSettings({
-      pretty: true
+      formatting: {}
     });
     const wrapper = shallowMount(ListSpaced);
 

@@ -39,7 +39,7 @@ function booleanSettings (options, vueConfigOptions) {
 function applySettings (vueConfigOptions) {
   let defaultSettings = {
     // To see available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
-    pretty: {
+    formatting: {
       indent_char: ' ',
       indent_inner_html: true,
       indent_size: 2,
@@ -61,7 +61,16 @@ function applySettings (vueConfigOptions) {
 
   let options = defaultSettings;
 
-  options.pretty = vueConfigOptions.pretty || options.pretty;
+  if (
+    vueConfigOptions.formatting &&
+    typeof(vueConfigOptions.formatting) === 'object' &&
+    !Array.isArray(vueConfigOptions.formatting)
+  ) {
+    options.formatting = vueConfigOptions.formatting;
+  } else {
+    options.formatting = defaultSettings.formatting;
+  }
+
   options = booleanSettings(options, vueConfigOptions);
 
   return options;
