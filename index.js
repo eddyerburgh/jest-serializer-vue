@@ -64,7 +64,26 @@ function removeServerRenderedText (html, options) {
 function removeScopedStylesDataVIDAttributes (html, options) {
   if (!options || options.removeDataVId) {
     // [-\w]+ will catch 1 or more instaces of a-z, A-Z, 0-9, hyphen (-), or underscore (_)
-    return html.replace(/ data-v-[-\w]+=""/g, '');
+    const regex = / data-v-[-\w]+=""/g;
+
+    // [[' data-v-asdf=""'], [' data-v-qwer=""'], [' data-v-asdf=""']]
+    let dataVIds = Array.from(html.matchAll(regex));
+    // ['data-v-asdf', 'data-v-qwer', 'data-v-asdf']
+    dataVIds = dataVIds.map(function (match) {
+      return match[0].trim().replace('=""', '');
+    });
+    // ['data-v-asdf', 'data-v-qwer']
+    dataVIds = Array.from(new Set(dataVIds));
+
+    const dom = new JSDOM(html);
+    dataVIds.forEach(function (attribute) {
+      let elements = dom.window.document.querySelectorAll('[' + attribute + ']');
+      elements.forEach(function (element) {
+        element.removeAttribute(attribute);
+      });
+    });
+
+    html = dom.window.document.body.innerHTML;
   }
   return html;
 }
