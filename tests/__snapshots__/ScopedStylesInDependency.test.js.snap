@@ -8,18 +8,18 @@ exports[`ScopedStylesInDependency.vue Snapshot data-v ids remain 1`] = `
       </div>
       <div class="vgt-responsive" style="overflow: scroll-y; max-height: auto;">
         <table class="vgt-table bordered ">
-          <thead data-v-13ae5fa3="">
-            <tr data-v-13ae5fa3="">
-              <th data-v-13ae5fa3="" class="vgt-left-align sortable">
-                <span data-v-13ae5fa3="">Name</span>
+          <thead data-v-13ae5fa3>
+            <tr data-v-13ae5fa3>
+              <th data-v-13ae5fa3 class="vgt-left-align sortable">
+                <span data-v-13ae5fa3>Name</span>
               </th>
-              <th data-v-13ae5fa3="" class="vgt-left-align sortable">
-                <span data-v-13ae5fa3="">Favorite data-v-id=""</span>
+              <th data-v-13ae5fa3 class="vgt-left-align sortable">
+                <span data-v-13ae5fa3>Favorite data-v-id=""</span>
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr class="">
+            <tr class>
               <td class="vgt-left-align">
                 <span>
                   Dave
@@ -58,7 +58,7 @@ exports[`ScopedStylesInDependency.vue Snapshot data-v ids removed 1`] = `
             </tr>
           </thead>
           <tbody>
-            <tr class="">
+            <tr class>
               <td class="vgt-left-align">
                 <span>
                   Dave

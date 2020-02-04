@@ -1,7 +1,7 @@
 {
   "name": "jest-serializer-vue-tjw",
   "description": "A superb jest serializer for Vue snapshots",
-  "version": "3.9.0",
+  "version": "3.10.0",
   "main": "index.js",
   "scripts": {
     "lint": "eslint --ext .js,.vue .",
@@ -11,12 +11,14 @@
     "coverage": "jest --coverage --runInBand --coverageReporters=text-lcov | coveralls",
     "validate": "npm run lint && npm test",
     "remote": "git remote rm eddyerburgh && git remote",
-    "travis": "npm run lint && npm run coverage"
+    "travis": "npm run lint && npm run coverage && jest --runInBand"
   },
   "ManifestComments": [
     "Jest 25.1.0 is broken on Windows. Pinning to 24.9.0 until Jest issue #9459 is resolved."
   ],
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "htmlparser2": "^4.0.0",
     "js-beautify": "^1.10.3",
     "lodash.clonedeep": "^4.5.0"
   },

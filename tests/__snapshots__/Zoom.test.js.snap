@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Zoom.vue Zoom in on a child element 1`] = `
+<article>
+  <p>
+    Lorem ipsum dolor sit amet, <strong>consectetur adipisicing</strong> elit.
+  </p>
+</article>
+`;
+
+exports[`Zoom.vue Zoom in on a table row 1`] = `
+<tr>
+  <td>
+    first
+  </td>
+  <td>
+    second
+  </td>
+</tr>
+`;

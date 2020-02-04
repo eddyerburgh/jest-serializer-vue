@@ -132,6 +132,8 @@ stringifyObjects     | `false`           | **EXPERIMENTAL** Replaces `title="[ob
    * `data-testid="whatever" `
    * `data-test-id="whatever"`
 1. All `data-v-whatever=""` will be removed. These are attributes added by Vue to help scope styles. Removing them from your snapshots makes updating scoped dependencies easier.
+1. Any empty HTML attributes will be trimmed to remove the empty assignment. So `<div class=""></div>` becomes `<div class></div>`.
+1. Some optionally self-closing tags, will now become self-closing. So `<svg><path></path></svg>` becomes `<svg><path /></svg>`.
 
 **Example:** These are the kind of diffs you can expect to see when migrating from v2 to v3.
 
@@ -166,6 +168,11 @@ stringifyObjects     | `false`           | **EXPERIMENTAL** Replaces `title="[ob
 -    </button></a>
 +      </button>
 +    </a>
+-    <svg style="">
++    <svg style>
+-      <path d="M 10,150 L 70,10 L 130,150 z"></path>
++      <path d="M 10,150 L 70,10 L 130,150 z" />
+     </svg>
    </div>
  </div>
 ```
@@ -173,7 +180,7 @@ stringifyObjects     | `false`           | **EXPERIMENTAL** Replaces `title="[ob
 
 ### Avoiding breaking changes (not recommended)
 
-Though all default settings are designed to be the best choice for most people, if you want to opt out of these (or opt-in to other changes, like removing HTML comments from snapshots) you can via a settings object in your Vue config.
+Though all default settings are designed to be the best choice for most people, if you want to opt out of these (or opt-in to other changes, like removing HTML comments from snapshots) you can via a settings object in your Vue config. Note, some changes cannot currently be avoided (self-closing enforcement and empty attribute trimming).
 
 1. Edit your `vue.config.js` in the root of your project (or create it, if you do not have one).
 1. The following are the `jest-serializer-vue` v2.0.2 settings:

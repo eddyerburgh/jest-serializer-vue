@@ -37,7 +37,7 @@ exports[`Demo Inverted settings 1`] = `
         The above specific data-attrubutes are removed by default.
     </h1>
     <div>
-        <span class="active" data-v-b3d95ac7="">
+        <span class="active" data-v-b3d95ac7>
             These data-v ID's are removed too by default.
         </span>
     </div>
@@ -56,7 +56,7 @@ exports[`Demo v2.0.2 settings 1`] = `
     The above specific data-attrubutes are removed by default.
   </h1>
   <div>
-    <span class="active" data-qa="span" data-v-b3d95ac7="">
+    <span class="active" data-qa="span" data-v-b3d95ac7>
       These data-v ID's are removed too by default.
     </span>
     <!---->

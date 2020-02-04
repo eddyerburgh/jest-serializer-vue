@@ -1,67 +1,59 @@
-const JSDOM = require('jsdom').JSDOM;
+const helpers = require('./helpers.js');
 
 /**
  * Removes any data-* attribute passed in.
  *
- * @param  {object} dom        The markup as a JSDOM node.
+ * @param  {object} $          The markup as a Cheerio DOM node.
  * @param  {string} attribute  The attribute suffix.
  */
-function removeDataAttribute (dom, attribute) {
-  let elements = dom.window.document.querySelectorAll('[data-' + attribute + ']');
-  elements.forEach(function (element) {
-    element.removeAttribute('data-' + attribute);
-  });
+function removeDataAttribute ($, attribute) {
+  $('[data-' + attribute + ']').removeAttr('data-' + attribute);
 }
 
 /**
  * Removes ID attributes from elements where the id starts with `test`.
  *
- * @param  {object} dom      The markup as a JSDOM node.
+ * @param  {object} $        The markup as a Cheerio DOM node.
  * @param  {object} options  User options
  */
-function removeIdTest (dom, options) {
+function removeIdTest ($, options) {
   if (options && options.removeIdTest) {
-    const elements = dom.window.document.querySelectorAll('[id]');
-    elements.forEach(function (element) {
-      if (element.attributes.id.value.startsWith('test')) {
-        element.removeAttribute('id');
+    $('[id]').each(function (index, element) {
+      if ($(element).attr('id').startsWith('test')) {
+        $(element).removeAttr('id');
       }
     });
   }
 }
 
+
 /**
  * Removes classes from elements where the class starts with `test`.
  *
- * @param  {object} dom      The markup as a JSDOM node.
+ * @param  {object} $        The markup as a Cheerio DOM node.
  * @param  {object} options  User options
  */
-function removeClassTest (dom, options) {
+function removeClassTest ($, options) {
   if (options && options.removeClassTest) {
-    const elements = dom.window.document.querySelectorAll('[class]');
-    elements.forEach(function (element) {
-      const classes = element.classList;
-      let classesToRemove = [];
-
-      classes.forEach(function (className) {
-        if (className.startsWith('test')) {
-          classesToRemove.push(className);
-        }
-      });
-
-      // If a element has 3 or more classes that need removed,
-      // then removing them in the above loop would mess up the index
-      // as we are looping, skipping classes. There is a test in place
-      // for that edge case. That's why we build a temp list of
-      // classes to remove and then loop over it.
-      classesToRemove.forEach(function (className) {
-        element.classList.remove(className);
+    $('[class]').each(function (index, element) {
+      let classesWereRemoved = false;
+      $(element).removeClass(function (index, css) {
+        return css
+          .split(' ')
+          .filter(function (className) {
+            if (className.toLowerCase().startsWith('test')) {
+              classesWereRemoved = true;
+              return true;
+            }
+            return false;
+          })
+          .join(' ');
       });
 
       // Only remove the empty class attributes on elements that had test-classes.
       // There is a test case for this.
-      if (!element.classList.length && classesToRemove.length) {
-        element.removeAttribute('class');
+      if (!$(element).attr('class') && classesWereRemoved) {
+        $(element).removeAttr('class');
       }
     });
   }
@@ -84,25 +76,25 @@ function removeClassTest (dom, options) {
  * @return {string}          Modified HTML string
  */
 function removeTestTokens (html, options) {
-  const dom = new JSDOM(html);
+  const $ = helpers.$(html);
 
   if (!options || options.removeDataTest) {
-    removeDataAttribute(dom, 'test');
+    removeDataAttribute($, 'test');
   }
   if (!options || options.removeDataTestid) {
-    removeDataAttribute(dom, 'testid');
+    removeDataAttribute($, 'testid');
   }
   if (!options || options.removeDataTestId) {
-    removeDataAttribute(dom, 'test-id');
+    removeDataAttribute($, 'test-id');
   }
   if (options && options.removeDataQa) {
-    removeDataAttribute(dom, 'qa');
+    removeDataAttribute($, 'qa');
   }
 
-  removeIdTest(dom, options);
-  removeClassTest(dom, options);
+  removeIdTest($, options);
+  removeClassTest($, options);
 
-  html = dom.window.document.body.innerHTML;
+  html = $.html();
   return html;
 }
 

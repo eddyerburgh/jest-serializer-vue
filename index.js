@@ -1,7 +1,7 @@
 const beautify = require('js-beautify').html;
 const fs = require('fs');
-const JSDOM = require('jsdom').JSDOM;
 
+const helpers = require('./src/helpers.js');
 const loadOptions = require('./src/loadOptions.js');
 const replaceObjectObject = require('./src/replaceObjectObject.js');
 const removeTestTokens = require('./src/removeTestTokens.js');
@@ -43,14 +43,11 @@ function isVueWrapper (received) {
  */
 function removeServerRenderedText (html, options) {
   if (!options || options.removeServerRendered) {
-    const dom = new JSDOM(html);
+    const $ = helpers.$(html);
 
-    let elements = dom.window.document.querySelectorAll('[data-server-rendered]');
-    elements.forEach(function (element) {
-      element.removeAttribute('data-server-rendered');
-    });
+    $('[data-server-rendered]').removeAttr('data-server-rendered');
 
-    return dom.window.document.body.innerHTML;
+    return $.html();
   }
   return html;
 }
@@ -65,10 +62,15 @@ function removeServerRenderedText (html, options) {
 function removeScopedStylesDataVIDAttributes (html, options) {
   if (!options || options.removeDataVId) {
     // [-\w]+ will catch 1 or more instaces of a-z, A-Z, 0-9, hyphen (-), or underscore (_)
-    const regex = / data-v-[-\w]+=""/g;
+    const regexA = / data-v-[-\w]+=""/g;
+    const regexB = / data-v-[-\w]+/g;
 
     // [[' data-v-asdf=""'], [' data-v-qwer=""'], [' data-v-asdf=""']]
-    let dataVIds = Array.from(html.matchAll(regex));
+    let dataVIdsA = Array.from(html.matchAll(regexA));
+    // [[' data-v-asdf'], [' data-v-qwer'], [' data-v-asdf']]
+    let dataVIdsB = Array.from(html.matchAll(regexB));
+    // [...dataVIdsA, ...dataVIdsB]
+    let dataVIds = [].concat(dataVIdsA, dataVIdsB);
     // ['data-v-asdf', 'data-v-qwer', 'data-v-asdf']
     dataVIds = dataVIds.map(function (match) {
       return match[0].trim().replace('=""', '');
@@ -76,15 +78,12 @@ function removeScopedStylesDataVIDAttributes (html, options) {
     // ['data-v-asdf', 'data-v-qwer']
     dataVIds = Array.from(new Set(dataVIds));
 
-    const dom = new JSDOM(html);
+    const $ = helpers.$(html);
     dataVIds.forEach(function (attribute) {
-      let elements = dom.window.document.querySelectorAll('[' + attribute + ']');
-      elements.forEach(function (element) {
-        element.removeAttribute(attribute);
-      });
+      $('[' + attribute + ']').removeAttr(attribute);
     });
 
-    html = dom.window.document.body.innerHTML;
+    html = $.html();
   }
   return html;
 }

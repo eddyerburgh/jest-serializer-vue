@@ -41,7 +41,7 @@ exports[`TestTokens.vue Only class="test" removed 1`] = `
   <li class="active">
     class="test active"
   </li>
-  <li class="">
+  <li class>
     class=""
   </li>
 </ul>
@@ -88,7 +88,7 @@ exports[`TestTokens.vue Only data-qa removed 1`] = `
   <li class="test active">
     class="test active"
   </li>
-  <li class="">
+  <li class>
     class=""
   </li>
 </ul>
@@ -135,7 +135,7 @@ exports[`TestTokens.vue Only data-server-rendered removed 1`] = `
   <li class="test active">
     class="test active"
   </li>
-  <li class="">
+  <li class>
     class=""
   </li>
 </ul>
@@ -182,7 +182,7 @@ exports[`TestTokens.vue Only data-test removed 1`] = `
   <li class="test active">
     class="test active"
   </li>
-  <li class="">
+  <li class>
     class=""
   </li>
 </ul>
@@ -229,7 +229,7 @@ exports[`TestTokens.vue Only data-test-id removed 1`] = `
   <li class="test active">
     class="test active"
   </li>
-  <li class="">
+  <li class>
     class=""
   </li>
 </ul>
@@ -276,7 +276,7 @@ exports[`TestTokens.vue Only data-testid removed 1`] = `
   <li class="test active">
     class="test active"
   </li>
-  <li class="">
+  <li class>
     class=""
   </li>
 </ul>
@@ -323,7 +323,7 @@ exports[`TestTokens.vue Only id="test" removed 1`] = `
   <li class="test active">
     class="test active"
   </li>
-  <li class="">
+  <li class>
     class=""
   </li>
 </ul>
@@ -370,7 +370,7 @@ exports[`TestTokens.vue Remove data-server-rendered, data-test, data-testid, dat
   <li class="test active">
     class="test active"
   </li>
-  <li class="">
+  <li class>
     class=""
   </li>
 </ul>
