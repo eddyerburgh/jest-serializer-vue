@@ -1,45 +1,62 @@
 # jest-serializer-vue-tjw
 
-[![Build Status](https://travis-ci.org/tjw-lint/jest-serializer-vue-tjw.svg?branch=master)](https://travis-ci.org/tjw-lint/jest-serializer-vue-tjw) [![Test Coverage](https://img.shields.io/coveralls/github/tjw-lint/jest-serializer-vue-tjw?label=Test%20Coverage&logo=jest)](https://coveralls.io/github/tjw-lint/jest-serializer-vue-tjw) ![Lint Coverage: 100%](https://img.shields.io/badge/Lint%20Coverage-100%25-brightgreen.svg?logo=eslint) ![Code of Conduct: No Ideologies](https://img.shields.io/badge/CoC-No%20Ideologies-blue) ![MIT Licensed](https://img.shields.io/badge/License-MIT-brightgreen)
+[![Build Status](https://travis-ci.org/tjw-lint/jest-serializer-vue-tjw.svg?branch=master)](https://travis-ci.org/tjw-lint/jest-serializer-vue-tjw) [![Test Coverage](https://img.shields.io/coveralls/github/tjw-lint/jest-serializer-vue-tjw?label=Test%20Coverage&logo=jest)](https://coveralls.io/github/tjw-lint/jest-serializer-vue-tjw) [![Lint Coverage: 100%](https://img.shields.io/badge/Lint%20Coverage-100%25-brightgreen.svg?logo=eslint)](https://github.com/tjw-lint) [![Code of Conduct: No Ideologies](https://img.shields.io/badge/CoC-No%20Ideologies-blue)](/CODE_OF_CONDUCT.md) [![MIT Licensed](https://img.shields.io/badge/License-MIT-brightgreen)](/LICENSE)
 
 
 Jest Vue snapshot serializer
 
+**Sections:**
 
-## Why use this over the Edd's (AKA: Features list)?
-
-1. Both versions automatically remove `data-server-rendered="true"`.
-1. This version automatically removes `data-test="whatever"` from your snapshots (also `data-testid` and `data-test-id`).
-1. This version can optionally remove `data-qa="whatever"` from your snapshots (disabled by default, see API for reasoning).
-1. This version automatically removes `data-v-1234abcd=""` from snapshots.
-1. This version can optionally remove all html comments `<!-- whatever -->` from your snapshots.
-1. This version can optionally remove `id="testWhatever"` from your snapshots.
-1. This version can optionally remove `class="test-token"` from your snapshots.
-1. This version has an experimental feature to display JSON data stored in HTML attributes instead of `href="[object Object]"`
-1. This version has much better snapshot defaults.
-1. This version lets you control your snapshot formatting with an API.
-1. Edd is busy and not maintaining his Vue repos right now. Cool dude though :sunglasses:.
+* [Features List](#features-list)
+  * [Better Snapshots Demo](#what-do-you-mean-by-much-better-snapshot-defaults)
+* [Usage/Installation/Migration Instructions](#usage-and-migrating-from-v2-to-v3)
+  * [Expected breaking changes for v2 to v3 migration](#breaking-changes-to-expect-in-your-snapshots-during-migration)
+  * [Avoiding snpshot changes (not recommended)](#avoiding-breaking-changes-not-recommended)
+* [API](#api)
+* [FAQs & Testing Tips](#faqs--tips)
 
 
-## What do you mean by "much better snapshot defaults"?
+## Features list:
 
-This is the before and after of using the default formatting options, and my options (which you can change with the API below, something Edd's version does not offer).
+The following can all be adjusted in your `vue.config.js` settings.
+
+1. Can optionally remove from snapshots (enabled by default):
+   * `data-server-rendered="true"`
+   * `data-test="whatever"`
+   * `data-testid="whatever"`
+   * `data-test-id="whatever"`
+   * `data-v-1234abcd=""`
+1. Can optionally remove from snapshots (disabled by default):
+   * All html comments `<!-- whatever -->`
+   * `data-qa="whatever"`
+   * `id="testWhatever"`
+   * `class="test-whatever"`
+1. Has an experimental feature to display JSON data stored in HTML attributes instead of `href="[object Object]"`
+1. Has much better snapshot defaults.
+1. Lets you control your snapshot formatting with an API.
+
+
+### What do you mean by "much better snapshot defaults"?
+
+This is the before and after of using the default formatting options from v2, and the default formatting options in v3. You can now customize the formatting as well in v3 (See API).
 
 ![Difference between the snapshot settings, my version makes the formatting cleaner and easier to see what actually changed in a failing snapshot](https://user-images.githubusercontent.com/4629794/53278405-f8685880-36d6-11e9-92f0-127e0673a23a.gif)
 
 
-## Usage
+## Usage and Migrating from v2 to v3
 
-1. `npm install --save-dev jest-serializer-vue-tjw`
-1. You need to tell Jest to use the serializer. Add this to your Jest config:
-
+1. First you will need to install this new dependency:
+   * `npm install --save-dev jest-serializer-vue-tjw`
+   * If you have `jest-serializer-vue` in your dependencies or devDependencies it can be removed.
+1. Next you will need to change your Jest config settings. Make sure to replace the reference to the previous (non-TJW) version with the new version:
    ```js
    "snapshotSerializers": [
      "<rootDir>/node_modules/jest-serializer-vue-tjw"
    ]
    ```
-
-Then just use `.toMatchSnapshot('optional snapshot name');` in your tests:
+1. Run your test command with `-- -u` at the end so it will update any existing snapshots, for example:
+   * `npm run test:unit -- -u`
+1. Then just use `.toMatchSnapshot('optional snapshot name');` in your tests:
 
 **Example:**
 
@@ -59,69 +76,6 @@ describe('MyComponent.vue', () => {
 });
 ```
 
-
-## API
-
-**ALL SETTINGS ARE OPTIONAL**. The defaults are below. If you like them, you don't need to add anything to your Vue config.
-
-In your `vue.config.js` file:
-
-```js
-module.exports = {
-  pluginOptions: {
-    jestSerializer: {
-      // All available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
-      formatting: {
-        indent_char: ' ',
-        indent_inner_html: true,
-        indent_size: 2,
-        inline: [],
-        sep: '\n',
-        unformatted: ['code', 'pre']
-      },
-      removeClassTest: false,
-      removeComments: false,
-      removeDataTest: true,
-      removeDataTestid: true,
-      removeDataTestId: true,
-      removeDataQa: false,
-      removeDataVId: true,
-      removeIdTest: false,
-      removeServerRendered: true,
-      stringifyObjects: false
-    }
-  }
-};
-```
-
-Setting              | Default           | Description
-:--                  | :--               | :--
-formatting           | See above example | These options format the snapshot. [See all available options here](https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js).
-removeClassTest      | `false`           | Removes all CSS classes that start with "test", `class="test-whatever"`. **Warning:** Don't use this approach. Use `data-test` instead. It is better suited for this because it doesn't conflate CSS and test tokens.
-removeComments       | `false`           | Removes all HTML comments from your snapshots. This is false be default, as sometimes these comments can infer important information about how your DOM was rendered. However, this is mostly just personal preference.
-removeDataTest       | `true`            | Removes `data-test="whatever"` from your snapshots if true. To also remove these from your production builds, [see here](https://forum.vuejs.org/t/how-to-remove-attributes-from-tags-inside-vue-components/24138).
-removeDataTestid     | `true`            | Removes `data-testid="whatever"` from your snapshots if true.
-removeDataTestId     | `true`            | Removes `data-test-id="whatever"` from your snapshots if true.
-removeDataQa         | `false`           | Removes `data-qa="whatever"` from your snapshots if true. `data-qa` is usually used by non-dev QA members. If they change in your snapshot, that indicates it may break someone else's E2E tests. So most using `data-qa` prefer they be left in by default.
-removeDataVId        | `true`            | Removes `data-v-1234abcd=""` from your snapshots. Important if a 3rd-party component uses scoped styles, to prevent ID changes from breaking your `mount` based tests when updating a dependency.
-removeIdTest         | `false`           | Removes `id="test-whatever"` or `id="testWhatever"`from snapshots. **Warning:** You should never use ID's for test tokens, as they can also be used by JS and CSS, making them more brittle. Use `data-test-id` instead.
-removeServerRendered | `true`            | Removes `data-server-rendered="true"` from your snapshots if true.
-stringifyObjects     | `false`           | **EXPERIMENTAL** Replaces `title="[object Object]"` with `title="{a:'asdf'}"` in your snapshots, allowing you to see the data in the snapshot. Requires you to pass in `wrapper`, not `wrapper.html()`. This is still a work in progress. On deeply nested componets, it may exceed callstack.
-
-
-## Migrating from v2 to v3
-
-1. First you will need to install this new dependency:
-   * `npm install --save-dev jest-serializer-vue-tjw`
-   * If you have `jest-serializer-vue` in your dependencies or devDependencies it can be removed.
-1. Next you will need to change your Jest config settings. Make sure to replace the reference to the previous (non-TJW) version with the new version:
-   ```js
-   "snapshotSerializers": [
-     "<rootDir>/node_modules/jest-serializer-vue-tjw"
-   ]
-   ```
-1. Run your test command with `-- -u` at the end so it will update your snapshots, for example:
-   * `npm run test:unit -- -u`
 
 
 ### Breaking changes to expect in your snapshots during migration
@@ -211,6 +165,55 @@ module.exports = {
   }
 };
 ```
+
+
+## API
+
+**ALL SETTINGS ARE OPTIONAL**. The defaults are below. If you like them, you don't need to add anything to your Vue config.
+
+In your `vue.config.js` file:
+
+```js
+module.exports = {
+  pluginOptions: {
+    jestSerializer: {
+      // All available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
+      formatting: {
+        indent_char: ' ',
+        indent_inner_html: true,
+        indent_size: 2,
+        inline: [],
+        sep: '\n',
+        unformatted: ['code', 'pre']
+      },
+      removeClassTest: false,
+      removeComments: false,
+      removeDataTest: true,
+      removeDataTestid: true,
+      removeDataTestId: true,
+      removeDataQa: false,
+      removeDataVId: true,
+      removeIdTest: false,
+      removeServerRendered: true,
+      stringifyObjects: false
+    }
+  }
+};
+```
+
+Setting              | Default           | Description
+:--                  | :--               | :--
+formatting           | See above example | These options format the snapshot. [See all available options here](https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js).
+removeClassTest      | `false`           | Removes all CSS classes that start with "test", `class="test-whatever"`. **Warning:** Don't use this approach. Use `data-test` instead. It is better suited for this because it doesn't conflate CSS and test tokens.
+removeComments       | `false`           | Removes all HTML comments from your snapshots. This is false be default, as sometimes these comments can infer important information about how your DOM was rendered. However, this is mostly just personal preference.
+removeDataTest       | `true`            | Removes `data-test="whatever"` from your snapshots if true. To also remove these from your production builds, [see here](https://forum.vuejs.org/t/how-to-remove-attributes-from-tags-inside-vue-components/24138).
+removeDataTestid     | `true`            | Removes `data-testid="whatever"` from your snapshots if true.
+removeDataTestId     | `true`            | Removes `data-test-id="whatever"` from your snapshots if true.
+removeDataQa         | `false`           | Removes `data-qa="whatever"` from your snapshots if true. `data-qa` is usually used by non-dev QA members. If they change in your snapshot, that indicates it may break someone else's E2E tests. So most using `data-qa` prefer they be left in by default.
+removeDataVId        | `true`            | Removes `data-v-1234abcd=""` from your snapshots. Important if a 3rd-party component uses scoped styles, to prevent ID changes from breaking your `mount` based tests when updating a dependency.
+removeIdTest         | `false`           | Removes `id="test-whatever"` or `id="testWhatever"`from snapshots. **Warning:** You should never use ID's for test tokens, as they can also be used by JS and CSS, making them more brittle. Use `data-test-id` instead.
+removeServerRendered | `true`            | Removes `data-server-rendered="true"` from your snapshots if true.
+stringifyObjects     | `false`           | **EXPERIMENTAL** Replaces `title="[object Object]"` with `title="{a:'asdf'}"` in your snapshots, allowing you to see the data in the snapshot. Requires you to pass in `wrapper`, not `wrapper.html()`. This is still a work in progress. On deeply nested componets, it may exceed callstack.
 
 
 ## FAQs & tips
