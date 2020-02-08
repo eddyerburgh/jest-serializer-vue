@@ -7,7 +7,7 @@ Jest Vue snapshot serializer
 
 ![Project logo](logo.png)
 
-*Logo made by Aurora Wooten (age 14)*
+*Logo made by Aurora Wooton (age 14)*
 
 
 **Sections:**
