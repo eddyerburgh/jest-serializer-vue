@@ -12,6 +12,7 @@ tests/
 .travis.yml
 CODE_OF_CONDUCT.md
 jest.config.json
+logo.png
 PULL_REQUEST_TEMPLATE.md
 README.md
 vue.config.js
