@@ -62,18 +62,13 @@ function removeServerRenderedText (html, options) {
 function removeScopedStylesDataVIDAttributes (html, options) {
   if (!options || options.removeDataVId) {
     // [-\w]+ will catch 1 or more instaces of a-z, A-Z, 0-9, hyphen (-), or underscore (_)
-    const regexA = / data-v-[-\w]+=""/g;
-    const regexB = / data-v-[-\w]+/g;
+    const regex = / data-v-[-\w]+/g;
 
-    // [[' data-v-asdf=""'], [' data-v-qwer=""'], [' data-v-asdf=""']]
-    let dataVIdsA = Array.from(html.matchAll(regexA));
-    // [[' data-v-asdf'], [' data-v-qwer'], [' data-v-asdf']]
-    let dataVIdsB = Array.from(html.matchAll(regexB));
-    // [...dataVIdsA, ...dataVIdsB]
-    let dataVIds = [].concat(dataVIdsA, dataVIdsB);
+    // [' data-v-asdf=""', ' data-v-qwer', ' data-v-asdf']
+    let dataVIds = html.match(regex) || [];
     // ['data-v-asdf', 'data-v-qwer', 'data-v-asdf']
     dataVIds = dataVIds.map(function (match) {
-      return match[0].trim().replace('=""', '');
+      return match.trim().replace('=""', '');
     });
     // ['data-v-asdf', 'data-v-qwer']
     dataVIds = Array.from(new Set(dataVIds));
