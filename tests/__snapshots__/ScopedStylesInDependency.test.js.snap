@@ -8,13 +8,13 @@ exports[`ScopedStylesInDependency.vue Snapshot data-v ids remain 1`] = `
       </div>
       <div class="vgt-responsive" style="overflow: scroll-y; max-height: auto;">
         <table class="vgt-table bordered ">
-          <thead data-v-13ae5fa3>
-            <tr data-v-13ae5fa3>
-              <th data-v-13ae5fa3 class="vgt-left-align sortable">
-                <span data-v-13ae5fa3>Name</span>
+          <thead data-v-eb5a915e>
+            <tr data-v-eb5a915e>
+              <th data-v-eb5a915e class="vgt-left-align sortable" style="min-width: auto; max-width: auto; width: auto;">
+                <span data-v-eb5a915e>Name</span>
               </th>
-              <th data-v-13ae5fa3 class="vgt-left-align sortable">
-                <span data-v-13ae5fa3>Favorite data-v-id=""</span>
+              <th data-v-eb5a915e class="vgt-left-align sortable" style="min-width: auto; max-width: auto; width: auto;">
+                <span data-v-eb5a915e>Favorite data-v-id=""</span>
               </th>
             </tr>
           </thead>
@@ -49,10 +49,10 @@ exports[`ScopedStylesInDependency.vue Snapshot data-v ids removed 1`] = `
         <table class="vgt-table bordered ">
           <thead>
             <tr>
-              <th class="vgt-left-align sortable">
+              <th class="vgt-left-align sortable" style="min-width: auto; max-width: auto; width: auto;">
                 <span>Name</span>
               </th>
-              <th class="vgt-left-align sortable">
+              <th class="vgt-left-align sortable" style="min-width: auto; max-width: auto; width: auto;">
                 <span>Favorite data-v-id=""</span>
               </th>
             </tr>
