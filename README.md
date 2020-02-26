@@ -10,6 +10,17 @@ Jest Vue snapshot serializer
 *Logo made by Aurora Wooton (age 14)*
 
 
+* * *
+
+
+**Quotes:**
+
+> "This looks fantastic! This might sell me on testing." - Views on Vue podcast (#99)
+
+
+* * *
+
+
 **Sections:**
 
 * [Features List](#features-list)
