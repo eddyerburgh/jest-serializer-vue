@@ -5,6 +5,23 @@ exports[`ObjectAttribute.vue Snapshots unchanged: 1 wrapper.html() 1`] = `
   <h1 title="asdf,qwer" class="active">
     text
   </h1>
+  <hr title="text,22">
+  <hr>
+  <hr title="true">
+  <hr title="Invalid Date">
+  <hr title="Error: err">
+  <hr title="Infinity">
+  <hr title="-Infinity">
+  <hr title="NaN">
+  <hr>
+  <hr title="75">
+  <hr title="[object Object]">
+  <hr title="[object Set]">
+  <hr title="Text">
+  <hr title="function String() { [native code] }">
+  <hr>
+  <hr title="Text
+Text">
 </div>
 `;
 
@@ -13,6 +30,23 @@ exports[`ObjectAttribute.vue Snapshots unchanged: 2 wrapper 1`] = `
   <h1 title="['asdf','qwer']" class="active">
     text
   </h1>
+  <hr title="['text',22]">
+  <hr title="false">
+  <hr title="true">
+  <hr title="{}">
+  <hr title="{}">
+  <hr title="null">
+  <hr title="null">
+  <hr title="null">
+  <hr title="null">
+  <hr title="75">
+  <hr title="{a:{c:true},b:{d:'text'}}">
+  <hr title="{}">
+  <hr title="Text">
+  <hr title>
+  <hr title>
+  <hr title="Text
+Text">
 </div>
 `;
 
@@ -21,6 +55,23 @@ exports[`ObjectAttribute.vue Snapshots unchanged: 3 wrapper.html() 1`] = `
   <h1 title="asdf,qwer" class="active">
     text
   </h1>
+  <hr title="text,22">
+  <hr>
+  <hr title="true">
+  <hr title="Invalid Date">
+  <hr title="Error: err">
+  <hr title="Infinity">
+  <hr title="-Infinity">
+  <hr title="NaN">
+  <hr>
+  <hr title="75">
+  <hr title="[object Object]">
+  <hr title="[object Set]">
+  <hr title="Text">
+  <hr title="function String() { [native code] }">
+  <hr>
+  <hr title="Text
+Text">
 </div>
 `;
 
@@ -29,5 +80,22 @@ exports[`ObjectAttribute.vue Snapshots unchanged: 4 wrapper 1`] = `
   <h1 title="['asdf','qwer']" class="active">
     text
   </h1>
+  <hr title="['text',22]">
+  <hr title="false">
+  <hr title="true">
+  <hr title="{}">
+  <hr title="{}">
+  <hr title="null">
+  <hr title="null">
+  <hr title="null">
+  <hr title="null">
+  <hr title="75">
+  <hr title="{a:{c:true},b:{d:'text'}}">
+  <hr title="{}">
+  <hr title="Text">
+  <hr title>
+  <hr title>
+  <hr title="Text
+Text">
 </div>
 `;

@@ -20,8 +20,8 @@ function swapQuotes (str) {
  * @return {string}               stringified string
  */
 function stringify (obj) {
-  if (typeof(obj) !== 'object' || Array.isArray(obj)) {
-    return JSON.stringify(obj);
+  if (typeof(obj) !== 'object' || Array.isArray(obj) || !obj) {
+    return JSON.stringify(obj) || '';
   }
 
   let props = Object
