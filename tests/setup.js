@@ -1,8 +1,8 @@
 global.beforeEach(() => {
-  jest.resetModules();
 });
 
 global.afterEach(() => {
+  jest.resetModules();
 });
 
 // Jest's setTimeout defaults to 5 seconds.

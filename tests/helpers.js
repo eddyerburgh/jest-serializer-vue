@@ -1,6 +1,8 @@
+const path = require('path');
+
 const helpers = {
   mockSettings: function (settings) {
-    jest.doMock('../vue.config.js', function () {
+    jest.doMock(path.join(__dirname, '..', 'vue.config.js'), function () {
       return {
         pluginOptions: {
           jestSerializer: settings

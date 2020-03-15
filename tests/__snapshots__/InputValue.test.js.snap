@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputValue.vue Value not shown in snapshot 1`] = `
+<form>
+  <input value="Native value with attribute" title="text">
+  <input value="Native value without attribute">
+  <input value="Native checkbox" type="checkbox">
+  <input title="text">
+  <input>
+  <input>
+  <input>
+  <input>
+  <input>
+  <input type="date">
+  <input type="date">
+  <input>
+  <input>
+  <input>
+  <input>
+  <input type="range">
+  <input>
+  <input>
+  <input type="checkbox">
+  <input>
+  <input>
+  <input>
+  <textarea></textarea>
+  <input type="radio" value="cat">
+  <input type="radio" value="dog">
+  <select>
+    <option value="carrot"></option>
+    <option value="celery"></option>
+  </select>
+</form>
+`;
+
+exports[`InputValue.vue Value shown in snapshot 1`] = `
+<form>
+  <input value="Native value with attribute" title="text">
+  <input value="Native value without attribute">
+  <input value="Native checkbox" type="checkbox">
+  <input title="text" value="'There is a title attribute on this input'">
+  <input value="'There are no other attrubutes on this input'">
+  <input value="['text',22]">
+  <input value="false">
+  <input value="true">
+  <input value="Error: err">
+  <input type="date" value="1577836800000">
+  <input type="date" value="Invalid Date">
+  <input value="Infinity">
+  <input value="-Infinity">
+  <input value="NaN">
+  <input value="null">
+  <input type="range" value="75">
+  <input value="{a:{c:true},b:{d:'text'}}">
+  <input value="['a','b','c']">
+  <input type="checkbox" value="'Text'">
+  <input value="Function">
+  <input value>
+  <input value="undefined">
+  <textarea value="'Text\\nText'"></textarea>
+  <input type="radio" value="cat" v-model="'dog'">
+  <input type="radio" value="dog" v-model="'dog'">
+  <select value="'celery'">
+    <option value="carrot"></option>
+    <option value="celery"></option>
+  </select>
+</form>
+`;

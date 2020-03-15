@@ -1,9 +1,13 @@
 sudo: required
 dist: trusty
 language: node_js
+# This ensures we don't accidentally stop supporting our lowest supported Node version
 node_js:
-  - "13"
+  - "8.3.0"
+# However Node 8.3.0 comes with npm 5.3.0.
+# npm 5.7.1 is the first version to support npm ci
 install:
+    - npm install -g npm@5.7.1
     - npm ci
 script:
     - npm run travis

@@ -2,6 +2,7 @@
 
 exports[`loadOptions.js Vue config does not exist 1`] = `
 Object {
+  "addInputValues": false,
   "formatting": Object {
     "indent_char": " ",
     "indent_inner_html": true,
@@ -24,5 +25,6 @@ Object {
   "removeIdTest": false,
   "removeServerRendered": true,
   "stringifyObjects": false,
+  "verbose": true,
 }
 `;

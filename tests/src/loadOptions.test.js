@@ -1,6 +1,6 @@
 const path = require('path');
 
-const loadOptions = require('../src/loadOptions.js');
+const loadOptions = require('../../src/loadOptions.js');
 
 describe('loadOptions.js', () => {
   test('Vue config does not exist', () => {

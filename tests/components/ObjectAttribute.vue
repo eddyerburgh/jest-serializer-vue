@@ -1,5 +1,12 @@
 <template>
-  <div :title="first" data-test="div">
+  <div v-if="dateMode">
+    <hr :title="date" />
+  </div>
+  <div
+    v-else
+    :title="first"
+    data-test="div"
+  >
     <h1
       :title="['asdf', 'qwer']"
       class="active"
@@ -10,7 +17,6 @@
     <hr :title="array" />
     <hr :title="booleanOff" />
     <hr :title="booleanOn" />
-    <!-- <hr :title="date" /> -->
     <hr :title="invalidDate" />
     <hr :title="err" />
     <hr :title="infinity" />
@@ -22,7 +28,6 @@
     <hr :title="set" />
     <hr :title="string" />
     <hr :title="stringType" />
-    <!-- <hr :title="symbolic" /> -->
     <hr :title="undefiner" />
     <hr :title="textarea" />
   </div>
@@ -31,6 +36,13 @@
 <script>
 export default {
   name: 'ObjectAttribute',
+  props: {
+    dateMode: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
   data: function () {
     return {
       first: {
@@ -65,7 +77,6 @@ export default {
       set: new Set(['a', 'b', 'b', 'c']),
       string: 'Text',
       stringType: String,
-      symbolic: Symbol('a'),
       undefiner: undefined,
       textarea: 'Text\nText'
     };
