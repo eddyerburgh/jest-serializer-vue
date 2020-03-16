@@ -15,7 +15,7 @@ Jest Vue snapshot serializer
 
 **Quotes:**
 
-> "This looks fantastic! This might sell me on testing." - Views on Vue podcast (#99)
+> "This looks fantastic! This might sell me on testing." - [Views on Vue podcast (#99)](https://devchat.tv/views-on-vue/vov-099-testing-in-vue-with-the-jared-wilcurt/)
 
 
 * * *
