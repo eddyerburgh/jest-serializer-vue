@@ -193,7 +193,8 @@ In your `vue.config.js` file:
 module.exports = {
   pluginOptions: {
     jestSerializer: {
-      // All available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
+      attributesToClear: [],
+      // All available formatting options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
       formatting: {
         indent_char: ' ',
         indent_inner_html: true,
@@ -221,6 +222,7 @@ module.exports = {
 
 Setting              | Default           | Description
 :--                  | :--               | :--
+attributesToClear    | []                | Takes an array of attribute strings, like `['title', 'id']`, to remove the values from these attributes. `<input title id class="stuff">`.
 formatting           | See above example | These options format the snapshot. [See all available options here](https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js).
 removeClassTest      | `false`           | Removes all CSS classes that start with "test", `class="test-whatever"`. **Warning:** Don't use this approach. Use `data-test` instead. It is better suited for this because it doesn't conflate CSS and test tokens.
 removeComments       | `false`           | Removes all HTML comments from your snapshots. This is false be default, as sometimes these comments can infer important information about how your DOM was rendered. However, this is mostly just personal preference.

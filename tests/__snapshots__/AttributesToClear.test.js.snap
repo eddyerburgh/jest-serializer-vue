@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AttributesToClear.vue All attributes cleared 1`] = `
+<div>
+  <h1 id title class>
+    fluffy
+  </h1>
+  <h2 id asdf>
+    mittens
+  </h2>
+  <h3 id asdf data-test>
+    scruffy
+  </h3>
+</div>
+`;
+
+exports[`AttributesToClear.vue Default snapshot 1`] = `
+<div>
+  <h1 id="kitten" title="cat" class="meow nyan">
+    fluffy
+  </h1>
+  <h2 id="kitten2" asdf="qwer">
+    mittens
+  </h2>
+  <h3 id asdf data-test="qwer">
+    scruffy
+  </h3>
+</div>
+`;
+
+exports[`AttributesToClear.vue Just ID cleared 1`] = `
+<div>
+  <h1 id title="cat" class="meow nyan">
+    fluffy
+  </h1>
+  <h2 id asdf="qwer">
+    mittens
+  </h2>
+  <h3 id asdf data-test="qwer">
+    scruffy
+  </h3>
+</div>
+`;
