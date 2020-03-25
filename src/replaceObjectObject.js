@@ -26,13 +26,13 @@ function convertVNodeDataAttributesToString (vnode) {
 
 /**
  * Checks settings and if Vue wrapper is valid, then converts
- * vnode attributes to a string with clean quotes.
+ * vnode attributes to a string with clean quotes by mutating
+ * the vnode object.
  *
  * Example: title="[object Object]" becomes title="{a:'asdf'}"
  *
  * @param  {object} vnode    A cloned copy of wrapper.vnode to mutate
  * @param  {object} options  Options object for this serializer
- * @return {object}          Modified vnode
  */
 function replaceObjectObject (vnode, options) {
   if (
@@ -40,7 +40,6 @@ function replaceObjectObject (vnode, options) {
     (options && options.stringifyObjects)
   ) {
     convertVNodeDataAttributesToString(vnode);
-    return vnode;
   }
 }
 

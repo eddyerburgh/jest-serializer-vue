@@ -4,7 +4,8 @@ exports[`ScopedStylesInDependency.vue Snapshot data-v ids remain 1`] = `
 <div>
   <div class="vgt-wrap ">
     <div class="vgt-inner-wrap">
-      <div class="vgt-fixed-header"></div>
+      <div class="vgt-fixed-header">
+      </div>
       <div class="vgt-responsive" style="overflow: scroll-y; max-height: auto;">
         <table class="vgt-table bordered ">
           <thead data-v-eb5a915e>

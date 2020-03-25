@@ -65,12 +65,12 @@ function addVnodeValueAttribute (vnode) {
 }
 
 /**
- * Adds in a value attribue for all input elements so the snapshot.
+ * Adds in a value attribue for all input elements in the snapshot,
+ * by mutating the vnode object.
  * <input> => <input value="cow">
  *
  * @param  {object} vnode    A cloned copy of the wrapper.vnode to mutate
  * @param  {object} options  Options object for this serializer
- * @return {object}          Modified vnode
  */
 function addInputValues (vnode, options) {
   if (
@@ -79,7 +79,6 @@ function addInputValues (vnode, options) {
   ) {
     addVnodeValueAttribute(vnode);
   }
-  return vnode;
 }
 
 module.exports = addInputValues;

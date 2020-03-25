@@ -13,15 +13,25 @@ const replaceObjectObject = require('./replaceObjectObject.js');
  */
 function vnodeManipulation (received, options, cloneDeep) {
   let html = received;
-  if (helpers.isVueWrapper(received)) {
+
+  if (
+    helpers.isVueWrapper(received) &&
+    options &&
+    (
+      options.addInputValues ||
+      options.stringifyObjects
+    )
+  ) {
     const vnode = helpers.cloneVnode(received, options, cloneDeep);
     if (vnode) {
       addInputValues(vnode, options);
       replaceObjectObject(vnode, options);
       html = helpers.vnodeToString(vnode) || '';
-    } else {
-      html = received.html();
     }
+  }
+
+  if (typeof(html.html) === 'function') {
+    html = html.html() || '';
   }
 
   return html;
