@@ -1,0 +1,37 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs: 
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        # This ensures we don't accidentally stop supporting our lowest supported Node version (8.3)
+        node-version: [8.3.0, 10.x, 12.x, 14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    # However Node 8.3.0 comes with npm 5.3.0.
+    # npm 5.7.1 is the first version to support npm ci
+    - if: ${{ matrix.node-version == '8.3.0' }}
+      run: npm install -g npm@5.7.1
+
+    - run: npm ci
+    - run: npm run lint
+    - run: npm run coverage
+    - run: jest --runInBand
