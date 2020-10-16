@@ -18,6 +18,7 @@ Object {
   },
   "removeClassTest": false,
   "removeComments": false,
+  "removeDataCy": false,
   "removeDataQa": false,
   "removeDataTest": true,
   "removeDataTestId": true,

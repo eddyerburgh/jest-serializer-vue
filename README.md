@@ -173,6 +173,7 @@ module.exports = {
       removeDataTestid: false,
       removeDataTestId: false,
       removeDataQa: false,
+      removeDataCy: false,
       removeDataVId: false,
       removeIdTest: false,
       removeServerRendered: true,
@@ -209,6 +210,7 @@ module.exports = {
       removeDataTestid: true,
       removeDataTestId: true,
       removeDataQa: false,
+      removeDataCy: false,
       removeDataVId: true,
       removeIdTest: false,
       removeServerRendered: true,
@@ -230,6 +232,7 @@ removeDataTest       | `true`            | Removes `data-test="whatever"` from y
 removeDataTestid     | `true`            | Removes `data-testid="whatever"` from your snapshots if true.
 removeDataTestId     | `true`            | Removes `data-test-id="whatever"` from your snapshots if true.
 removeDataQa         | `false`           | Removes `data-qa="whatever"` from your snapshots if true. `data-qa` is usually used by non-dev QA members. If they change in your snapshot, that indicates it may break someone else's E2E tests. So most using `data-qa` prefer they be left in by default.
+removeDataCy         | `false`           | Removes `data-cy="whatever"` from your snapshots if true. `data-cy` is used by Cypress end-to-end tests. If they change in your snapshot, that indicates it may break an E2E tests. So most using `data-cy` prefer they be left in by default.
 removeDataVId        | `true`            | Removes `data-v-1234abcd=""` from your snapshots. Important if a 3rd-party component uses scoped styles, to prevent ID changes from breaking your `mount` based tests when updating a dependency.
 removeIdTest         | `false`           | Removes `id="test-whatever"` or `id="testWhatever"`from snapshots. **Warning:** You should never use ID's for test tokens, as they can also be used by JS and CSS, making them more brittle. Use `data-test-id` instead.
 removeServerRendered | `true`            | Removes `data-server-rendered="true"` from your snapshots if true.

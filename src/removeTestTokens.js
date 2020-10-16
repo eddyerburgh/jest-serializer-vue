@@ -90,6 +90,9 @@ function removeTestTokens (html, options) {
   if (options && options.removeDataQa) {
     removeDataAttribute($, 'qa');
   }
+  if (options && options.removeDataCy) {
+    removeDataAttribute($, 'cy');
+  }
 
   removeIdTest($, options);
   removeClassTest($, options);

@@ -7,7 +7,7 @@ describe('Demo', () => {
     The above specific data-attrubutes are removed by default.
   </h1>
   <div>
-    <span class="active" data-qa="span" data-v-b3d95ac7="">
+    <span class="active" data-qa="span" data-cy="span" data-v-b3d95ac7="">
       These data-v ID's are removed too by default.
     </span>
     <!---->
@@ -39,6 +39,7 @@ describe('Demo', () => {
       removeDataTestid: false,
       removeDataTestId: false,
       removeDataQa: true,
+      removeDataCy: true,
       removeDataVId: false,
       removeServerRendered: false,
       stringifyObjects: true
@@ -63,6 +64,7 @@ describe('Demo', () => {
       removeDataTestid: false,
       removeDataTestId: false,
       removeDataQa: false,
+      removeDataCy: false,
       removeDataVId: false,
       removeIdTest: false,
       removeServerRendered: true,
