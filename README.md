@@ -56,7 +56,7 @@ The following can all be adjusted in your `vue.config.js` settings.
 
 This is the before and after of using the default formatting options from v2, and the default formatting options in v3. You can now customize the formatting as well in v3 (See API).
 
-![Difference between the snapshot settings, my version makes the formatting cleaner and easier to see what actually changed in a failing snapshot](https://user-images.githubusercontent.com/4629794/53278405-f8685880-36d6-11e9-92f0-127e0673a23a.gif)
+![Difference between the snapshot settings, my version makes the formatting cleaner and easier to see what actually changed in a failing snapshot](https://user-images.githubusercontent.com/4629794/96301398-22b20c80-0fc5-11eb-8d71-195f56b556e0.gif)
 
 
 ## Usage and Migrating from v2 to v3
