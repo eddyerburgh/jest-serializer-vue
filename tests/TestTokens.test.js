@@ -20,6 +20,7 @@ describe('TestTokens.vue', () => {
       removeDataTestid: false,
       removeDataTestId: false,
       removeDataQa: false,
+      removeDataCy: false,
       removeClassTest: false,
       removeIdTest: false
     });
@@ -37,6 +38,7 @@ describe('TestTokens.vue', () => {
       removeDataTestid: false,
       removeDataTestId: false,
       removeDataQa: false,
+      removeDataCy: false,
       removeClassTest: false,
       removeIdTest: false
     });
@@ -54,6 +56,7 @@ describe('TestTokens.vue', () => {
       removeDataTestid: true,
       removeDataTestId: false,
       removeDataQa: false,
+      removeDataCy: false,
       removeClassTest: false,
       removeIdTest: false
     });
@@ -71,6 +74,7 @@ describe('TestTokens.vue', () => {
       removeDataTestid: false,
       removeDataTestId: true,
       removeDataQa: false,
+      removeDataCy: false,
       removeClassTest: false,
       removeIdTest: false
     });
@@ -88,6 +92,25 @@ describe('TestTokens.vue', () => {
       removeDataTestid: false,
       removeDataTestId: false,
       removeDataQa: true,
+      removeDataCy: false,
+      removeClassTest: false,
+      removeIdTest: false
+    });
+
+    const wrapper = shallowMount(TestTokens);
+
+    expect(wrapper)
+      .toMatchSnapshot();
+  });
+
+  test('Only data-cy removed', () => {
+    helpers.mockSettings({
+      removeServerRendered: false,
+      removeDataTest: false,
+      removeDataTestid: false,
+      removeDataTestId: false,
+      removeDataQa: false,
+      removeDataCy: true,
       removeClassTest: false,
       removeIdTest: false
     });
@@ -105,6 +128,7 @@ describe('TestTokens.vue', () => {
       removeDataTestid: false,
       removeDataTestId: false,
       removeDataQa: false,
+      removeDataCy: false,
       removeClassTest: false,
       removeIdTest: true
     });
@@ -122,6 +146,7 @@ describe('TestTokens.vue', () => {
       removeDataTestid: false,
       removeDataTestId: false,
       removeDataQa: false,
+      removeDataCy: false,
       removeClassTest: true,
       removeIdTest: false
     });

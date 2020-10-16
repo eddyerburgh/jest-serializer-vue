@@ -15,6 +15,9 @@
     <li data-qa="data-qa">
       data-qa="token"
     </li>
+    <li data-cy="data-cy">
+      data-cy="token"
+    </li>
     <li id="test">
       id="test"
     </li>
