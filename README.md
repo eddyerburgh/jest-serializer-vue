@@ -238,7 +238,7 @@ removeIdTest         | `false`           | Removes `id="test-whatever"` or `id="
 removeServerRendered | `true`            | Removes `data-server-rendered="true"` from your snapshots if true.
 verbose              | `true`            | Logs to the console errors or other messages if true. **Strongly recommended** if using experimental features.
 addInputValues       | `false`           | **EXPERIMENTAL** Displays the value of form fields. `<input>` becomes `<input value="whatever">` in your snapshots. Requires you pass in `wrapper`, not `wrapper.html()`. On deeply nested components, it may exceed callstack.
-stringifyObjects     | `false`           | **EXPERIMENTAL** Replaces `title="[object Object]"` with `title="{a:'asdf'}"` in your snapshots, allowing you to see the data in the snapshot. Requires you to pass in `wrapper`, not `wrapper.html()`. This is still a work in progress. On deeply nested componets, it may exceed callstack.
+stringifyObjects     | `false`           | **EXPERIMENTAL** Replaces `title="[object Object]"` with `title="{a:'asdf'}"` in your snapshots, allowing you to see the data in the snapshot. Requires you to pass in `wrapper`, not `wrapper.html()`. This is still a work in progress. On deeply nested components, it may exceed callstack.
 
 
 ## FAQs & tips
@@ -303,7 +303,7 @@ describe('YourComponent.vue', () => {
 });
 ```
 
-**How do I opt out of stringifyObjects or addInputValues for one test?** - This is actually much easier. These experimetnal features can only be done on a Vue VNode. So if you do `.html()` prior to sending it, it will always skip these transforms. This allows you to use these experimental feature more easily, while opting out of the more troublesome tests.
+**How do I opt out of stringifyObjects or addInputValues for one test?** - This is actually much easier. These experimetnal features can only be done on a Vue VNode. So if you do `.html()` prior to sending it, it will always skip these transforms. This allows you to use these experimental features more easily, while opting out of the more troublesome tests.
 
 ```js
 test('Assuming stringifyObjects is enabled', () => {
