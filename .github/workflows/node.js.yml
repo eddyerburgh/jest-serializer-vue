@@ -36,4 +36,4 @@ jobs:
     - if: ${{ matrix.node-version != '8.3.0' }}
       run: npm run lint
     # - run: npm run coverage
-    - run: npx jest --runInBand
+    - run: npm t

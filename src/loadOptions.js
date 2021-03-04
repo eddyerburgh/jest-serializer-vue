@@ -19,6 +19,7 @@ function booleanSettings (options, vueConfigOptions) {
     'removeDataCy',
     'removeDataVId',
     'removeIdTest',
+    'removeIstanbulComments',
     'removeServerRendered',
     'stringifyObjects',
     'verbose'
@@ -105,6 +106,7 @@ function applySettings (vueConfigOptions) {
     removeDataCy: false,
     removeDataVId: true,
     removeIdTest: false,
+    removeIstanbulComments: true,
     removeServerRendered: true,
     stringifyObjects: false,
     verbose: true

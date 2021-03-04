@@ -1,7 +1,7 @@
 {
   "name": "jest-serializer-vue-tjw",
   "description": "A superb jest serializer for Vue snapshots",
-  "version": "3.15.0",
+  "version": "3.16.0",
   "main": "index.js",
   "scripts": {
     "lint": "eslint --ext .js,.vue .",
@@ -14,30 +14,31 @@
     "travis": "npm run lint && npm run coverage && jest --runInBand"
   },
   "ManifestComments": [
-    "Pinned jest to 24.9.0. 25.1.0 is broken on Windows. Waiting for issue #9459 to be resolved."
+    "Pinned jest to 24.9.0. 25.1.0 is broken on Windows. Waiting for issue #9459 to be resolved.",
+    "Pinned vue-good-table to 2.21.0. 2.21.1+ no longer use scoped styles, which is why we pulled it in to test 3rd party scoped libraries."
   ],
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "htmlparser2": "^5.0.0",
-    "js-beautify": "^1.13.0",
+    "htmlparser2": "^6.0.0",
+    "js-beautify": "^1.13.5",
     "lodash.clonedeep": "^4.5.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-env": "^7.13.9",
     "@vue/test-utils": "^1.0.0-beta.33",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^26.5.2",
+    "babel-jest": "^26.6.3",
     "coveralls": "^3.1.0",
-    "eslint": "^7.11.0",
+    "eslint": "^7.21.0",
     "eslint-config-tjw-base": "^1.0.0",
     "eslint-config-tjw-jest": "^1.0.0",
-    "eslint-config-tjw-vue": "^2.0.0",
-    "eslint-plugin-jsdoc": "^30.6.5",
-    "eslint-plugin-vue": "^7.0.1",
+    "eslint-config-tjw-vue": "^2.0.2",
+    "eslint-plugin-jsdoc": "^32.2.0",
+    "eslint-plugin-vue": "^7.7.0",
     "jest": "24.9.0",
     "vue": "^2.6.12",
-    "vue-good-table": "^2.21.0",
+    "vue-good-table": "2.21.0",
     "vue-jest": "^3.0.7",
     "vue-template-compiler": "^2.6.12"
   },

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Istanbul.vue Comment removed 1`] = `
+<div title="function () {
+        return true;
+      }">
+  <section>
+    <article class="alright">
+      <aside>
+        <h1 class="okay">okay</h1>
+        <fieldset>
+          <form>
+            <label for="text" stuff="function (x) {
+        return !x;
+      }">
+              Text
+            </label>
+            <input id="text" aria-label="text" aria-required="true" requried thing="function () { [native code] }">
+          </form>
+        </fieldset>
+      </aside>
+    </article>
+  </section>
+</div>
+`;

@@ -94,6 +94,48 @@ function clearAttributes (html, options) {
 }
 
 /**
+ * Inline functions get weird istanbul coverage comments.
+ * This removes them.
+ * <div title="function () {
+ *   /* istanbul ignore next *\/
+ *   cov_1lmjj6lxv1.f[3]++;
+ *   cov_1lmjj6lxv1.s[15]++;
+ *   return true;
+ * }">
+ *
+ * @param  {string} html     The markup being serialized
+ * @param  {object} options  Options object for this serializer
+ * @return {string}          Modified HTML string
+ */
+function removeIstanbulComments (html, options) {
+  if (
+    options &&
+    options.removeIstanbulComments &&
+    html.includes('/* istanbul')
+  ) {
+    const $ = helpers.$(html);
+
+    $('*').each(function (index, element) {
+      Object.keys(element.attribs).forEach(function (attributeName) {
+        let value = element.attribs[attributeName];
+        if (value.includes('/* istanbul')) {
+          value = value.split('\n').filter(function (line) {
+            return (
+              !line.trim().startsWith('/* istanbul') &&
+              !line.trim().startsWith('cov_')
+            );
+          });
+          element.attribs[attributeName] = value.join('\n');
+        }
+      });
+    });
+
+    return $.html();
+  }
+  return html;
+}
+
+/**
  * Performs all string manipulations on the rendered DOM
  * prior to formatting. Cheerio or regex string manipulation.
  *
@@ -107,6 +149,7 @@ function stringManipulation (html, options) {
   html = removeScopedStylesDataVIDAttributes(html, options);
   html = removeAllComments(html, options);
   html = clearAttributes(html, options);
+  html = removeIstanbulComments(html, options);
 
   return html;
 }

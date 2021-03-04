@@ -25,6 +25,7 @@ Object {
   "removeDataTestid": true,
   "removeDataVId": true,
   "removeIdTest": false,
+  "removeIstanbulComments": true,
   "removeServerRendered": true,
   "stringifyObjects": false,
   "verbose": true,
