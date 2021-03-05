@@ -94,6 +94,34 @@ function clearAttributes (html, options) {
 }
 
 /**
+ * Replaces inline functions with the '[function]' placeholder.
+ *
+ * @param  {string} html     The markup being serialized
+ * @param  {object} options  Options object for this serializer
+ * @return {string}          Modified HTML string
+ */
+function clearInlineFunctions (html, options) {
+  if (
+    options &&
+    options.clearInlineFunctions
+  ) {
+    const $ = helpers.$(html);
+
+    $('*').each(function (index, element) {
+      Object.keys(element.attribs).forEach(function (attributeName) {
+        let value = element.attribs[attributeName].trim();
+        if (value.startsWith('function') && value.endsWith('}')) {
+          element.attribs[attributeName] = '[function]';
+        }
+      });
+    });
+
+    return $.html();
+  }
+  return html;
+}
+
+/**
  * Inline functions get weird istanbul coverage comments.
  * This removes them.
  * <div title="function () {
@@ -149,6 +177,7 @@ function stringManipulation (html, options) {
   html = removeScopedStylesDataVIDAttributes(html, options);
   html = removeAllComments(html, options);
   html = clearAttributes(html, options);
+  html = clearInlineFunctions(html, options); // should always be ran before removeIstanbulComments for speed
   html = removeIstanbulComments(html, options);
 
   return html;
