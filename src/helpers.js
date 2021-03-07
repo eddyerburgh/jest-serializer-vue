@@ -3,6 +3,29 @@ const htmlparser2 = require('htmlparser2');
 const Vue = require ('vue');
 
 const helpers = {
+  // Matches strings that look like functions
+  // START:
+  //   function
+  //   0 or more spaces
+  // FUNCTION NAME:
+  //   anything 0 or more times
+  //   0 or more spaces
+  // ARGUMENTS:
+  //   (
+  //   ARGUMENT:
+  //     anything followed by a comma, 0 or more times
+  //     0 or more spaces
+  //     0 or more times
+  //   )
+  //   0 or more spaces
+  // DECLARATION:
+  //   {
+  //     maybe anything
+  //     maybe return(s)
+  //     0 or more times
+  //   }
+  functionRegex: /function( )*(.)*( )*\((.,* *){0,}\) *{(.*\n*)*}/,
+
   /**
    * Console logs helper error messages if verbose mode is enabled.
    *

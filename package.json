@@ -1,7 +1,7 @@
 {
   "name": "jest-serializer-vue-tjw",
   "description": "A superb jest serializer for Vue snapshots",
-  "version": "3.16.0",
+  "version": "3.17.0",
   "main": "index.js",
   "scripts": {
     "lint": "eslint --ext .js,.vue .",
@@ -19,7 +19,7 @@
   ],
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "htmlparser2": "^6.0.0",
+    "htmlparser2": "^6.0.1",
     "js-beautify": "^1.13.5",
     "lodash.clonedeep": "^4.5.0"
   },

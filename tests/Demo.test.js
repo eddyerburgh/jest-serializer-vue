@@ -34,6 +34,7 @@ describe('Demo', () => {
   test('Inverted settings', () => {
     helpers.mockSettings({
       formatting: {},
+      clearInlineFunctions: true,
       removeComments: true,
       removeDataTest: false,
       removeDataTestid: false,
@@ -52,6 +53,7 @@ describe('Demo', () => {
 
   test('v2.0.2 settings', () => {
     helpers.mockSettings({
+      clearInlineFunctions: false,
       formatting: {
         unformatted: ['code', 'pre', 'em', 'strong', 'span'],
         indent_inner_html: true,
