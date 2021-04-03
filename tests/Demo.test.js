@@ -44,6 +44,7 @@ describe('Demo', () => {
       removeDataVId: false,
       removeIstanbulComments: false,
       removeServerRendered: false,
+      sortAttributes: false,
       stringifyObjects: true
     });
 
@@ -72,6 +73,7 @@ describe('Demo', () => {
       removeIdTest: false,
       removeIstanbulComments: false,
       removeServerRendered: true,
+      sortAttributes: false,
       stringifyObjects: false
     });
 

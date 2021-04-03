@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TestTokens.vue Only class="test" removed 1`] = `
-<ul id="tokens" class="tokens token">
+<ul class="tokens token" id="tokens">
   <li data-server-rendered="true">
     data-server-rendered="true"
   </li>
@@ -51,7 +51,7 @@ exports[`TestTokens.vue Only class="test" removed 1`] = `
 `;
 
 exports[`TestTokens.vue Only data-cy removed 1`] = `
-<ul id="tokens" class="tokens token">
+<ul class="tokens token" id="tokens">
   <li data-server-rendered="true">
     data-server-rendered="true"
   </li>
@@ -101,7 +101,7 @@ exports[`TestTokens.vue Only data-cy removed 1`] = `
 `;
 
 exports[`TestTokens.vue Only data-qa removed 1`] = `
-<ul id="tokens" class="tokens token">
+<ul class="tokens token" id="tokens">
   <li data-server-rendered="true">
     data-server-rendered="true"
   </li>
@@ -151,7 +151,7 @@ exports[`TestTokens.vue Only data-qa removed 1`] = `
 `;
 
 exports[`TestTokens.vue Only data-server-rendered removed 1`] = `
-<ul id="tokens" class="tokens token">
+<ul class="tokens token" id="tokens">
   <li>
     data-server-rendered="true"
   </li>
@@ -201,7 +201,7 @@ exports[`TestTokens.vue Only data-server-rendered removed 1`] = `
 `;
 
 exports[`TestTokens.vue Only data-test removed 1`] = `
-<ul id="tokens" class="tokens token">
+<ul class="tokens token" id="tokens">
   <li data-server-rendered="true">
     data-server-rendered="true"
   </li>
@@ -251,7 +251,7 @@ exports[`TestTokens.vue Only data-test removed 1`] = `
 `;
 
 exports[`TestTokens.vue Only data-test-id removed 1`] = `
-<ul id="tokens" class="tokens token">
+<ul class="tokens token" id="tokens">
   <li data-server-rendered="true">
     data-server-rendered="true"
   </li>
@@ -301,7 +301,7 @@ exports[`TestTokens.vue Only data-test-id removed 1`] = `
 `;
 
 exports[`TestTokens.vue Only data-testid removed 1`] = `
-<ul id="tokens" class="tokens token">
+<ul class="tokens token" id="tokens">
   <li data-server-rendered="true">
     data-server-rendered="true"
   </li>
@@ -351,7 +351,7 @@ exports[`TestTokens.vue Only data-testid removed 1`] = `
 `;
 
 exports[`TestTokens.vue Only id="test" removed 1`] = `
-<ul id="tokens" class="tokens token">
+<ul class="tokens token" id="tokens">
   <li data-server-rendered="true">
     data-server-rendered="true"
   </li>
@@ -401,7 +401,7 @@ exports[`TestTokens.vue Only id="test" removed 1`] = `
 `;
 
 exports[`TestTokens.vue Remove data-server-rendered, data-test, data-testid, data-test-id by default 1`] = `
-<ul id="tokens" class="tokens token">
+<ul class="tokens token" id="tokens">
   <li>
     data-server-rendered="true"
   </li>

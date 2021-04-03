@@ -22,6 +22,7 @@ function booleanSettings (options, vueConfigOptions) {
     'removeIdTest',
     'removeIstanbulComments',
     'removeServerRendered',
+    'sortAttributes',
     'stringifyObjects',
     'verbose'
   ];
@@ -110,6 +111,7 @@ function applySettings (vueConfigOptions) {
     removeIdTest: false,
     removeIstanbulComments: true,
     removeServerRendered: true,
+    sortAttributes: true,
     stringifyObjects: false,
     verbose: true
   };

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortAttributes.vue Sorted 1`] = `
+<div>
+  <h1 class="meow nyan" id="kitten" title="cat">
+    fluffy
+  </h1>
+  <h2 asdf="qwer" id="kitten2">
+    mittens
+  </h2>
+  <h3 asdf id>
+    scruffy
+  </h3>
+</div>
+`;
+
+exports[`SortAttributes.vue Unsorted 1`] = `
+<div>
+  <h1 id="kitten" title="cat" class="meow nyan">
+    fluffy
+  </h1>
+  <h2 id="kitten2" asdf="qwer">
+    mittens
+  </h2>
+  <h3 id asdf>
+    scruffy
+  </h3>
+</div>
+`;

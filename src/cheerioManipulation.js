@@ -121,6 +121,30 @@ function removeIstanbulComments ($, options) {
 }
 
 /**
+ * Sorts the attributes of all HTML elements to make diffs easier to read.
+ *
+ * <div id="dog" class="cat bat"><h1 title="a" class="b">Text</h1></div>
+ * <div class="cat bat" id="dog"><h1 class="b" title="a">Text</h1></div>
+ *
+ * @param  {object} $        The markup as a cheerio object
+ * @param  {object} options  Options object for this serializer
+ */
+function sortAttributes ($, options) {
+  if (
+    options &&
+    options.sortAttributes
+  ) {
+    $('*').each(function (index, element) {
+      Object.keys(element.attribs).sort().forEach(function (key) {
+        let value = element.attribs[key];
+        delete element.attribs[key];
+        element.attribs[key] = value;
+      });
+    });
+  }
+}
+
+/**
  * Performs all string manipulations on the rendered DOM
  * prior to formatting. Using Cheerio for DOM manipulation.
  *
@@ -139,6 +163,7 @@ function cheerioManipulation (html, options) {
   // clearInlineFunctions should always be ran before removeIstanbulComments for speed
   clearInlineFunctions($, options);
   removeIstanbulComments($, options);
+  sortAttributes($, options);
 
   return $.html();
 }

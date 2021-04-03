@@ -15,7 +15,7 @@ exports[`Istanbul.vue Comment removed 1`] = `
       }">
               Text
             </label>
-            <input id="text" aria-label="text" aria-required="true" requried thing="function () { [native code] }">
+            <input aria-label="text" aria-required="true" id="text" requried thing="function () { [native code] }">
           </form>
         </fieldset>
       </aside>

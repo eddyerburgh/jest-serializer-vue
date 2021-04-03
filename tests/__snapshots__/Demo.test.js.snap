@@ -6,7 +6,7 @@ exports[`Demo Default formatting 1`] = `
     The above specific data-attrubutes are removed by default.
   </h1>
   <div>
-    <span class="active" data-qa="span" data-cy="span">
+    <span class="active" data-cy="span" data-qa="span">
       These data-v ID's are removed too by default.
     </span>
     <!---->
@@ -22,7 +22,7 @@ exports[`Demo Default formatting 1`] = `
       <span class="sr-only">Loading...</span>
     </span>
     <a>
-      <button type="button" class="primary">
+      <button class="primary" type="button">
         <i class="fa fa-plus"></i>
         The formatting here is completely customizable (see API).
       </button>

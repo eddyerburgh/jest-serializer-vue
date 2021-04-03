@@ -1,29 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ListSpaced.vue Default formatting options 1`] = `
-<aside role="banner" class="test"><a title="one" class="one">
+<aside class="test" role="banner"><a class="one" title="one">
         one
-    </a> <a title="two" class="two">
+    </a> <a class="two" title="two">
         two
-    </a> <a title="three" class="three">
+    </a> <a class="three" title="three">
         three
-    </a> <a title="four" class="four">
+    </a> <a class="four" title="four">
         four
     </a></aside>
 `;
 
 exports[`ListSpaced.vue Snapshot unchanged 1`] = `
-<aside role="banner" class="test">
-  <a title="one" class="one">
+<aside class="test" role="banner">
+  <a class="one" title="one">
     one
   </a>
-  <a title="two" class="two">
+  <a class="two" title="two">
     two
   </a>
-  <a title="three" class="three">
+  <a class="three" title="three">
     three
   </a>
-  <a title="four" class="four">
+  <a class="four" title="four">
     four
   </a>
 </aside>

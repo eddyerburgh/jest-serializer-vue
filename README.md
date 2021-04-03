@@ -180,6 +180,7 @@ module.exports = {
       removeIdTest: false,
       removeIstanbulComments: false,
       removeServerRendered: true,
+      sortAttributes: false,
       stringifyObjects: false
     }
   }
@@ -219,9 +220,11 @@ module.exports = {
       removeIdTest: false,
       removeIstanbulComments: true,
       removeServerRendered: true,
+      sortAttributes: true,
+      verbose: true,
+      // Experimental features:
       addInputValues: false,
-      stringifyObjects: false,
-      verbose: true
+      stringifyObjects: false
     }
   }
 };
@@ -243,6 +246,7 @@ removeDataVId          | `true`            | Removes `data-v-1234abcd=""` from y
 removeIdTest           | `false`           | Removes `id="test-whatever"` or `id="testWhatever"`from snapshots. **Warning:** You should never use ID's for test tokens, as they can also be used by JS and CSS, making them more brittle. Use `data-test-id` instead.
 removeIstanbulComments | `true`            | Removes `/* istanbul ignore next */ cov_1lmjj6lxv1.f[3]++;` comments from snapshots when functions are inside HTML attributes. See [v3.16.0 release notes](https://github.com/tjw-lint/jest-serializer-vue-tjw/releases/tag/v3.16.0) for more details.
 removeServerRendered   | `true`            | Removes `data-server-rendered="true"` from your snapshots if true.
+sortAttributes         | `true`            | Sorts the attributes inside HTML elements in the snapshot. This helps make snapshot diffs easier to read.
 verbose                | `true`            | Logs to the console errors or other messages if true. **Strongly recommended** if using experimental features.
 addInputValues         | `false`           | **EXPERIMENTAL** Displays the value of form fields. `<input>` becomes `<input value="whatever">` in your snapshots. Requires you pass in `wrapper`, not `wrapper.html()`. On deeply nested components, it may exceed callstack.
 stringifyObjects       | `false`           | **EXPERIMENTAL** Replaces `title="[object Object]"` with `title="{a:'asdf'}"` in your snapshots, allowing you to see the data in the snapshot. Requires you to pass in `wrapper`, not `wrapper.html()`. This is still a work in progress. On deeply nested components, it may exceed callstack.

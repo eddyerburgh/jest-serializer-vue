@@ -2,9 +2,9 @@
 
 exports[`InputValue.vue Value not shown in snapshot 1`] = `
 <form>
-  <input value="Native value with attribute" title="text">
+  <input title="text" value="Native value with attribute">
   <input value="Native value without attribute">
-  <input value="Native checkbox" type="checkbox">
+  <input type="checkbox" value="Native checkbox">
   <input title="text">
   <input>
   <input>
@@ -36,9 +36,9 @@ exports[`InputValue.vue Value not shown in snapshot 1`] = `
 
 exports[`InputValue.vue Value shown in snapshot 1`] = `
 <form>
-  <input value="Native value with attribute" title="text">
+  <input title="text" value="Native value with attribute">
   <input value="Native value without attribute">
-  <input value="Native checkbox" type="checkbox">
+  <input type="checkbox" value="Native checkbox">
   <input title="text" value="'There is a title attribute on this input'">
   <input value="'There are no other attrubutes on this input'">
   <input value="['text',22]">
@@ -59,8 +59,8 @@ exports[`InputValue.vue Value shown in snapshot 1`] = `
   <input value>
   <input value="undefined">
   <textarea value="'Text\\nText'"></textarea>
-  <input type="radio" value="cat" v-model="'dog'">
-  <input type="radio" value="dog" v-model="'dog'">
+  <input type="radio" v-model="'dog'" value="cat">
+  <input type="radio" v-model="'dog'" value="dog">
   <select value="'celery'">
     <option value="carrot"></option>
     <option value="celery"></option>

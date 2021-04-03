@@ -8,7 +8,7 @@ exports[`ObjectAttribute.vue Date mode 1`] = `
 
 exports[`ObjectAttribute.vue Does not mutate original component wrapper: 1 wrapper.html() 1`] = `
 <div title="[object Object]">
-  <h1 title="asdf,qwer" class="active">
+  <h1 class="active" title="asdf,qwer">
     text
   </h1>
   <hr title="text,22">
@@ -33,7 +33,7 @@ Text">
 
 exports[`ObjectAttribute.vue Does not mutate original component wrapper: 2 wrapper 1`] = `
 <div title="{a:true,b:'Some \\'text\\'',c:{d:{e:'23'},f:'\\'&quot;\\'&quot;'}}">
-  <h1 title="['asdf','qwer']" class="active">
+  <h1 class="active" title="['asdf','qwer']">
     text
   </h1>
   <hr title="['text',22]">
@@ -58,7 +58,7 @@ Text">
 
 exports[`ObjectAttribute.vue Does not mutate original component wrapper: 3 wrapper.html() 1`] = `
 <div title="[object Object]">
-  <h1 title="asdf,qwer" class="active">
+  <h1 class="active" title="asdf,qwer">
     text
   </h1>
   <hr title="text,22">
@@ -83,7 +83,7 @@ Text">
 
 exports[`ObjectAttribute.vue Does not mutate original component wrapper: 4 wrapper 1`] = `
 <div title="{a:true,b:'Some \\'text\\'',c:{d:{e:'23'},f:'\\'&quot;\\'&quot;'}}">
-  <h1 title="['asdf','qwer']" class="active">
+  <h1 class="active" title="['asdf','qwer']">
     text
   </h1>
   <hr title="['text',22]">

@@ -2,13 +2,13 @@
 
 exports[`AttributesToClear.vue All attributes cleared 1`] = `
 <div>
-  <h1 id title class>
+  <h1 class id title>
     fluffy
   </h1>
-  <h2 id asdf>
+  <h2 asdf id>
     mittens
   </h2>
-  <h3 id asdf data-test>
+  <h3 asdf data-test id>
     scruffy
   </h3>
 </div>
@@ -16,13 +16,13 @@ exports[`AttributesToClear.vue All attributes cleared 1`] = `
 
 exports[`AttributesToClear.vue Default snapshot 1`] = `
 <div>
-  <h1 id="kitten" title="cat" class="meow nyan">
+  <h1 class="meow nyan" id="kitten" title="cat">
     fluffy
   </h1>
-  <h2 id="kitten2" asdf="qwer">
+  <h2 asdf="qwer" id="kitten2">
     mittens
   </h2>
-  <h3 id asdf data-test="qwer">
+  <h3 asdf data-test="qwer" id>
     scruffy
   </h3>
 </div>
@@ -30,13 +30,13 @@ exports[`AttributesToClear.vue Default snapshot 1`] = `
 
 exports[`AttributesToClear.vue Just ID cleared 1`] = `
 <div>
-  <h1 id title="cat" class="meow nyan">
+  <h1 class="meow nyan" id title="cat">
     fluffy
   </h1>
-  <h2 id asdf="qwer">
+  <h2 asdf="qwer" id>
     mittens
   </h2>
-  <h3 id asdf data-test="qwer">
+  <h3 asdf data-test="qwer" id>
     scruffy
   </h3>
 </div>

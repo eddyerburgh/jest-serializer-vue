@@ -10,10 +10,10 @@ exports[`ScopedStylesInDependency.vue Snapshot data-v ids remain 1`] = `
         <table class="vgt-table bordered ">
           <thead data-v-2d1e3c02>
             <tr data-v-2d1e3c02>
-              <th data-v-2d1e3c02 class="vgt-left-align sortable" style="min-width: auto; max-width: auto; width: auto;">
+              <th class="vgt-left-align sortable" data-v-2d1e3c02 style="min-width: auto; max-width: auto; width: auto;">
                 <span data-v-2d1e3c02>Name</span>
               </th>
-              <th data-v-2d1e3c02 class="vgt-left-align sortable" style="min-width: auto; max-width: auto; width: auto;">
+              <th class="vgt-left-align sortable" data-v-2d1e3c02 style="min-width: auto; max-width: auto; width: auto;">
                 <span data-v-2d1e3c02>Favorite data-v-id=""</span>
               </th>
             </tr>
