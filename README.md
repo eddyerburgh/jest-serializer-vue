@@ -133,7 +133,7 @@ describe('MyComponent.vue', () => {
 +      <span class="sr-only">Loading...</span>
 +    </span>
 +    <a>
-+      <button type="button class="primary">
++      <button class="primary" type="button>
 +        <i class="fa fa-plus"></i>
          The formatting here is completely customizable (see API).
 -    </button></a>
