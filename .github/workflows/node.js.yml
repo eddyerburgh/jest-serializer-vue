@@ -5,9 +5,9 @@ name: Build Status
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         # This ensures we don't accidentally stop supporting our lowest supported Node version (8.3)
-        node-version: [8.3.0, 10.x, 12.x, 14.x]
+        node-version: [8.3.0, 10.x, 12.x, 14.x, 16.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -32,8 +32,18 @@ jobs:
       run: npm install -g npm@5.7.1
 
     - run: npm ci
+
     # ESLint 7+ uses `} catch {` which is not supported in Node 8
-    - if: ${{ matrix.node-version != '8.3.0' }}
+    # ESLint 7.32+ uses `arr.flat` which is not supported in Node 10
+    - if: ${{ matrix.node-version != '8.3.0' && matrix.node-version != '10.x' }}
       run: npm run lint
-    # - run: npm run coverage
+
     - run: npm t
+
+    # main doesn't have a PR for comments so skip that branch
+    # We don't want 4 comments about code coverage, just just run it once on 8.3.0
+    - if: ${{ github.ref != 'refs/heads/main' && matrix.node-version == '8.3.0' }}
+      uses: romeovs/lcov-reporter-action@v0.2.21
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        lcov-file: ./coverage/lcov.info

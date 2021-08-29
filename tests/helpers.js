@@ -9,6 +9,13 @@ const helpers = {
         }
       };
     });
+  },
+  mockManifest: function (settings) {
+    jest.doMock(path.join(__dirname, '..', 'package.json'), function () {
+      return {
+        jestSerializer: settings
+      };
+    });
   }
 };
 

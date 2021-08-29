@@ -1,6 +1,6 @@
 # jest-serializer-vue-tjw
 
-[![Node.js CI](https://github.com/tjw-lint/jest-serializer-vue-tjw/actions/workflows/node.js.yml/badge.svg)](https://github.com/tjw-lint/jest-serializer-vue-tjw/actions/workflows/node.js.yml) [![Test Coverage](https://img.shields.io/coveralls/github/tjw-lint/jest-serializer-vue-tjw?label=Test%20Coverage&logo=jest)](https://coveralls.io/github/tjw-lint/jest-serializer-vue-tjw) [![Lint Coverage: 100%](https://img.shields.io/badge/Lint%20Coverage-100%25-brightgreen.svg?logo=eslint)](https://github.com/tjw-lint) [![Compatible with Node 8.3+](https://img.shields.io/badge/Node-%3E%3D8.3.0-brightgreen.svg?logo=Node.js)](/package.json) [![Code of Conduct: No Ideologies](https://img.shields.io/badge/CoC-No%20Ideologies-blue)](/CODE_OF_CONDUCT.md) [![MIT Licensed](https://img.shields.io/badge/License-MIT-brightgreen)](/LICENSE)
+[![Node.js CI](https://github.com/tjw-lint/jest-serializer-vue-tjw/actions/workflows/node.js.yml/badge.svg)](https://github.com/tjw-lint/jest-serializer-vue-tjw/actions/workflows/node.js.yml) [![Test Coverage: 100%](https://img.shields.io/badge/Test%20Coverage-100%25-brightgreen.svg?logo=jest)](https://github.com/tjw-lint/jest-serializer-vue-tjw/actions/workflows/node.js.yml) [![Lint Coverage: 100%](https://img.shields.io/badge/Lint%20Coverage-100%25-brightgreen.svg?logo=eslint)](https://github.com/tjw-lint) [![Compatible with Node 8.3+](https://img.shields.io/badge/Node-%3E%3D8.3.0-brightgreen.svg?logo=Node.js)](/package.json) [![Code of Conduct: No Ideologies](https://img.shields.io/badge/CoC-No%20Ideologies-blue)](/CODE_OF_CONDUCT.md) [![MIT Licensed](https://img.shields.io/badge/License-MIT-brightgreen)](/LICENSE)
 
 
 Jest Vue snapshot serializer
@@ -34,7 +34,7 @@ Jest Vue snapshot serializer
 
 ## Features list:
 
-The following can all be adjusted in your `vue.config.js` settings.
+The following can all be adjusted in your `vue.config.js` settings or `package.json`.
 
 1. Can optionally remove from snapshots (enabled by default):
    * `data-server-rendered="true"`
@@ -157,6 +157,7 @@ Though all default settings are designed to be the best choice for most people, 
 1. The following are the `jest-serializer-vue` v2.0.2 settings:
 
 ```js
+// vue.config.js
 module.exports = {
   pluginOptions: {
     jestSerializer: {
@@ -228,6 +229,48 @@ module.exports = {
     }
   }
 };
+```
+
+Alternatively, you can place your settings in the `package.json`. If a `jestSerializer` object exists here, we skip looking for a `vue.config.js` file (useful for those with complex configs, Nuxt users, or those not using Vue-CLI).
+
+In your `package.json` file:
+
+```json
+{
+  "name": "your_app",
+  "scripts": {},
+  "devDependencies": {},
+
+  "jestSerializer": {
+    "attributesToClear": [],
+    "clearInlineFunctions": false,
+    "//": "All available formatting options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js",
+    "formatting": {
+      "indent_char": " ",
+      "indent_inner_html": true,
+      "indent_size": 2,
+      "inline": [],
+      "sep": "\n",
+      "unformatted": ["code", "pre"]
+    },
+    "removeClassTest": false,
+    "removeComments": false,
+    "removeDataTest": true,
+    "removeDataTestid": true,
+    "removeDataTestId": true,
+    "removeDataQa": false,
+    "removeDataCy": false,
+    "removeDataVId": true,
+    "removeIdTest": false,
+    "removeIstanbulComments": true,
+    "removeServerRendered": true,
+    "sortAttributes": true,
+    "verbose": true,
+    "// ": "Experimental features:",
+    "addInputValues": false,
+    "stringifyObjects": false
+  }
+}
 ```
 
 Setting                | Default           | Description
