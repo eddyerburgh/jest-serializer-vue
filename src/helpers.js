@@ -39,6 +39,44 @@ const helpers = {
   },
 
   /**
+   * Returns a copy of the default settings object.
+   * Used as a starting point to deviate from based on
+   * user input, or to compare against in unit tests.
+   *
+   * @return {object}  Default settings
+   */
+  defaultSettings: function () {
+    return {
+      addInputValues: false,
+      attributesToClear: [],
+      clearInlineFunctions: false,
+      // To see available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
+      formatting: {
+        indent_char: ' ',
+        indent_inner_html: true,
+        indent_size: 2,
+        inline: [],
+        sep: '\n',
+        unformatted: ['code', 'pre']
+      },
+      removeClassTest: false,
+      removeComments: false,
+      removeDataTest: true,
+      removeDataTestid: true,
+      removeDataTestId: true,
+      removeDataQa: false,
+      removeDataCy: false,
+      removeDataVId: true,
+      removeIdTest: false,
+      removeIstanbulComments: true,
+      removeServerRendered: true,
+      sortAttributes: true,
+      stringifyObjects: false,
+      verbose: true
+    };
+  },
+
+  /**
    * Determines if the passed in value is markup.
    *
    * @param  {string}  received  The markup to be serialized

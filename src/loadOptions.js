@@ -1,4 +1,5 @@
 const path = require('path');
+const helpers = require('./helpers.js');
 
 /**
  * If a user set a boolean setting in their Vue config, we apply it here.
@@ -87,36 +88,7 @@ function validateAttributesToClear (options, userSettings) {
  * @return {object}              The options object.
  */
 function applySettings (userSettings) {
-  let defaultSettings = {
-    addInputValues: false,
-    attributesToClear: [],
-    clearInlineFunctions: false,
-    // To see available options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js
-    formatting: {
-      indent_char: ' ',
-      indent_inner_html: true,
-      indent_size: 2,
-      inline: [],
-      sep: '\n',
-      unformatted: ['code', 'pre']
-    },
-    removeClassTest: false,
-    removeComments: false,
-    removeDataTest: true,
-    removeDataTestid: true,
-    removeDataTestId: true,
-    removeDataQa: false,
-    removeDataCy: false,
-    removeDataVId: true,
-    removeIdTest: false,
-    removeIstanbulComments: true,
-    removeServerRendered: true,
-    sortAttributes: true,
-    stringifyObjects: false,
-    verbose: true
-  };
-
-  let options = defaultSettings;
+  let options = helpers.defaultSettings();
   options = validateFormatting(options, userSettings);
   options = booleanSettings(options, userSettings);
   options = validateAttributesToClear(options, userSettings);
@@ -148,7 +120,7 @@ function loadFromManifest (fs) {
  */
 function loadFromVueConfig (fs) {
   let vueConfig;
-  let vueConfigOptions = {};
+  let vueConfigOptions;
   const vueConfigLocation = path.join(process.cwd(), 'vue.config.js');
 
   if (fs.existsSync(vueConfigLocation)) {
