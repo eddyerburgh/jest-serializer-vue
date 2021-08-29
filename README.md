@@ -34,7 +34,7 @@ Jest Vue snapshot serializer
 
 ## Features list:
 
-The following can all be adjusted in your `vue.config.js` settings.
+The following can all be adjusted in your `vue.config.js` settings or `package.json`.
 
 1. Can optionally remove from snapshots (enabled by default):
    * `data-server-rendered="true"`
@@ -157,6 +157,7 @@ Though all default settings are designed to be the best choice for most people, 
 1. The following are the `jest-serializer-vue` v2.0.2 settings:
 
 ```js
+// vue.config.js
 module.exports = {
   pluginOptions: {
     jestSerializer: {
@@ -228,6 +229,48 @@ module.exports = {
     }
   }
 };
+```
+
+Alternatively, you can place your settings in the `package.json`. If a `jestSerializer` object exists here, we skip looking for a `vue.config.js` file (useful for those with complex configs, Nuxt users, or those not using Vue-CLI).
+
+In your `package.json` file:
+
+```json
+{
+  "name": "your_app",
+  "scripts": {},
+  "devDependencies": {},
+
+  "jestSerializer": {
+    "attributesToClear": [],
+    "clearInlineFunctions": false,
+    "//": "All available formatting options: https://github.com/beautify-web/js-beautify/blob/master/js/src/html/options.js",
+    "formatting": {
+      "indent_char": " ",
+      "indent_inner_html": true,
+      "indent_size": 2,
+      "inline": [],
+      "sep": "\n",
+      "unformatted": ["code", "pre"]
+    },
+    "removeClassTest": false,
+    "removeComments": false,
+    "removeDataTest": true,
+    "removeDataTestid": true,
+    "removeDataTestId": true,
+    "removeDataQa": false,
+    "removeDataCy": false,
+    "removeDataVId": true,
+    "removeIdTest": false,
+    "removeIstanbulComments": true,
+    "removeServerRendered": true,
+    "sortAttributes": true,
+    "verbose": true,
+    "// ": "Experimental features:",
+    "addInputValues": false,
+    "stringifyObjects": false
+  }
+}
 ```
 
 Setting                | Default           | Description
