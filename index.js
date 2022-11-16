@@ -4,7 +4,7 @@ const isHtmlString = received => received && typeof received === 'string' && rec
 const isVueWrapper = received => (
   received &&
   typeof received === 'object' &&
-  typeof received.isVueInstance === 'function'
+  typeof received.html === 'function'
 )
 const removeServerRenderedText = html => html.replace(/ data-server-rendered="true"/, '')
 // [-\w]+ will catch 1 or more instances of a-z, A-Z, 0-9, hyphen (-), or underscore (_)
