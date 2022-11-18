@@ -1,3 +1,18 @@
+<a name="v3.1.0"></a>
+
+Same as 3.0.0 (whoops)
+
+<a name="v3.0.0"></a>
+## v3.0.0 (2022-11-18)
+
+### Features
+
+* automatically remove data-test attributes from snapshots (#16) 600b2c0.
+
+### Bug Fixes
+
+* add compatibility @vue/test-utils@2 (vue3) (#56) 600b2c0.
+
 <a name="v2.0.1"></a>
 ## [v2.0.1](https://github.com/eddyerburgh/jest-serializer-vue/compare/v2.0.0...v2.0.1) (2018-06-04)
 
