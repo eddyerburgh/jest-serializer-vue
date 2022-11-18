@@ -1,7 +1,7 @@
 {
   "name": "jest-serializer-vue",
   "description": "A jest serializer for Vue snapshots",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "main": "index.js",
   "directories": {
     "test": "test"
