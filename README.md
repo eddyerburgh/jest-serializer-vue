@@ -370,3 +370,61 @@ test('Assuming stringifyObjects is enabled', () => {
     .toMatchSnapshot('Opt out of stringify objects and adding input values');
 });
 ```
+
+
+## Using with Vite
+
+Vite actually uses the same snapshot library under the hood as Jest, so this library will work with it as well.
+
+1. `npm install --save-dev jest-serializer-vue-tjw`
+1. In your `/vite.config.js` file point to a setup file:
+   ```js
+   import { defineConfig } from 'vite';
+   
+   export default defineConfig({
+     test: {
+       setupFiles: [
+         './tests/unit/setup.js'
+       ]
+     }
+   });
+   ```
+1. In your `/tests/unit/setup.js` file:
+   ```js
+   import vueSnapshotSerializer from './serializer.js';
+   
+   expect.addSnapshotSerializer(vueSnapshotSerializer);
+   ```
+1. In your `/tests/unit/serializer.js` file:
+   ```js
+   const jestSerializerVueTJW = require('jest-serializer-vue-tjw');
+   
+   const helpers = {
+     isHtmlString: function (received) {
+       return (
+         typeof(received) === 'string' &&
+         (
+           received.startsWith('<') ||
+           received.startsWith('"<')
+         )
+       );
+     },
+     isVueWrapper: function (received) {
+       return (
+         typeof(received) === 'object' &&
+         typeof(received.html) === 'function'
+       );
+     }
+   };
+   
+   module.exports = {
+     test: function (received) {
+       return helpers.isHtmlString(received) || helpers.isVueWrapper(received);
+     },
+     print: function (received) {
+       // force to a string
+       received = received?.html && received?.html() || received;
+       return jestSerializerVueTJW.print(received);
+     }
+   };
+   ```
