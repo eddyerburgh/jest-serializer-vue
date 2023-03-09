@@ -428,3 +428,12 @@ Vite actually uses the same snapshot library under the hood as Jest, so this lib
      }
    };
    ```
+1. Any customizing of settings for this library should be placed in your `/package.json`, like so:
+   ```json
+   {
+     "jestSerializer": {
+       "sortAttributes": true,
+       "verbose": true
+     }
+   }
+   ```
