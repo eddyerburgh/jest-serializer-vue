@@ -10,7 +10,16 @@ exports[`InlineFunctions.vue Functions kept 1`] = `
       }">Multi-line</h2>
   <h3 title="function (x) {
         return !x;
-      }">Arrow</h3>
+      }">Arrow 1</h3>
+  <h3 title="function (x) {
+        return !x;
+      }">Arrow 2</h3>
+  <h3 title="function () {
+        return true;
+      }">Arrow 3</h3>
+  <h3 title="function (x, y) {
+        return x + y;
+      }">Arrow 4</h3>
   <h4 title="function () { [native code] }">Reference</h4>
   <h5 title="2">Run</h5>
   <h6 title="function (a word used in programming) is typically followed by curly braces, ie {}">Red herring</h6>
@@ -35,7 +44,10 @@ exports[`InlineFunctions.vue Functions removed 1`] = `
 <div>
   <h1 title="[function]">Classic</h1>
   <h2 title="[function]">Multi-line</h2>
-  <h3 title="[function]">Arrow</h3>
+  <h3 title="[function]">Arrow 1</h3>
+  <h3 title="[function]">Arrow 2</h3>
+  <h3 title="[function]">Arrow 3</h3>
+  <h3 title="[function]">Arrow 4</h3>
   <h4 title="[function]">Reference</h4>
   <h5 title="2">Run</h5>
   <h6 title="function (a word used in programming) is typically followed by curly braces, ie {}">Red herring</h6>

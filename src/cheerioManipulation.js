@@ -69,14 +69,7 @@ function clearInlineFunctions ($, options) {
     $('*').each(function (index, element) {
       Object.keys(element.attribs).forEach(function (attributeName) {
         let value = element.attribs[attributeName];
-        if (
-          (
-            value.startsWith('function ') ||
-            value.startsWith('function(')
-          ) &&
-          value.endsWith('}') &&
-          helpers.functionRegex.test(value)
-        ) {
+        if (helpers.isFunctionDeclaration(value)) {
           element.attribs[attributeName] = '[function]';
         }
       });

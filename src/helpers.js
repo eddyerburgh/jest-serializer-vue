@@ -26,6 +26,15 @@ const helpers = {
   //   }
   functionRegex: /function( )*(.)*( )*\((.,* *){0,}\) *{(.*\n*)*}/,
 
+  isFunctionDeclaration: function (str) {
+    if (str.startsWith('function ') || str.startsWith('function(')) {
+      return str.endsWith('}') && helpers.functionRegex.test(str);
+    }
+  
+    // Good enough to match most arrow functions
+    return /^\s*\w+\s*=>/.test(str) || /^\s*\([^)]*\)\s*=>/.test(str);
+  },
+
   /**
    * Console logs helper error messages if verbose mode is enabled.
    *
