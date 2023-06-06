@@ -8,7 +8,7 @@ describe('InlineFunctions.vue', () => {
     helpers.mockSettings({
       clearInlineFunctions: false
     });
-    let wrapper = mount(InlineFunctions);
+    const wrapper = mount(InlineFunctions);
 
     expect(wrapper)
       .toMatchSnapshot();
@@ -18,9 +18,24 @@ describe('InlineFunctions.vue', () => {
     helpers.mockSettings({
       clearInlineFunctions: true
     });
-    let wrapper = mount(InlineFunctions);
+    const wrapper = mount(InlineFunctions);
 
     expect(wrapper)
       .toMatchSnapshot();
+  });
+
+  test('Props', () => {
+    const wrapper = mount(InlineFunctions);
+    const propFn = wrapper.vm.propFn;
+    const fn = propFn();
+
+    expect(typeof(propFn))
+      .toEqual('function');
+
+    expect(typeof(fn))
+      .toEqual('function');
+
+    expect(fn())
+      .toEqual({});
   });
 });
