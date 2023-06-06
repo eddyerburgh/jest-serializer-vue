@@ -113,7 +113,7 @@ describe('Helpers', () => {
         '(arg, arg2) => {return;}',
         '(arg, arg2) => { return; }',
         '(arg, arg2) => { return true; }',
-        '(arg, arg2) => { return true;\n}',
+        '(arg, arg2) => { return true;\n}'
       ];
 
       // Non-english symbols
